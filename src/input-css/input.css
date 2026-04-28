@@ -1,0 +1,40 @@
+@import "tailwindcss";
+@theme{
+  --breakpoint-*: initial;
+  --breakpoint-xxs: 375px;
+  --breakpoint-xs: 440px;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px; 
+
+    --color-primary: #FC653C;
+    --color-secondary: #1C1E27;
+    --color-text: #1C1E27;
+    --color-accent: #FFFFFF;
+    --color-dcdd9b1: #FFFFFF;
+    --color-3dde0a1: #9C9C9C;
+    --color-cc2395c: #F5F5F5;
+    --color-9fec2e5: #747474;
+    --color-e7b91bd: #FFFFFF;
+    --color-e843f70: #2B2E3B;
+    --color-a437f09: #DBDBDB;
+}
+
+body{
+    font-family: "Kumbh Sans", sans-serif;
+    color: var(--color-secondary);
+}
+.image-mask{
+  @apply mask-cover mask-no-repeat mask-[center_center]
+}
+
+.accordion-btn.active{
+  @apply text-secondary
+}
+.accordion-btn.active span{
+  @apply text-primary rotate-270
+}
+.bar {
+  width: 0%;
+}
