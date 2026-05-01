@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zedello Navbar</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: '#E8501A',
+            dark: '#1A1A2E',
+          },
+          fontFamily: {
+            sans: ['DM Sans', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Dropdown animation */
+    .dropdown-menu {
+      display: none;
+      opacity: 0;
+      transform: translateY(-8px);
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .dropdown-menu.open {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Mobile menu slide from LEFT, full width */
+    #mobile-menu {
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+      width: 100%;
+      left: 0;
+      right: 0;
+    }
+
+    #mobile-menu.open {
+      transform: translateX(0);
+    }
+
+    /* Mobile sub-menu */
+    .mobile-sub-menu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .mobile-sub-menu.open {
+      max-height: 500px;
+    }
+
+    /* Chevron rotate */
+    .chevron {
+      transition: transform 0.25s ease;
+    }
+
+    .chevron.rotated {
+      transform: rotate(180deg);
+    }
+
+    /* Active nav highlight */
+    .nav-item-active {
+      color: #E8501A;
+    }
+
+    /* Overlay */
+    #overlay {
+      display: none;
+    }
+
+    #overlay.open {
+      display: block;
+    }
+  </style>
+</head>
+
+<body class="font-sans bg-gray-50 min-h-screen">
+
+  <!-- DESKTOP & MOBILE HEADER -->
+  <header class="bg-white shadow-sm sticky top-0 z-50">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-2 shrink-0">
+          <svg width="32" height="28" viewBox="0 0 32 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="0,0 18,0 10,14 18,14 8,28 0,28 10,14 2,14" fill="#1A1A2E" />
+            <polygon points="14,0 32,0 24,14 32,14 22,28 14,28 24,14 16,14" fill="#E8501A" opacity="0.85" />
+          </svg>
+          <span class="text-xl font-700 tracking-tight text-dark font-bold">Zedello</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-1">
+          <!-- Home -->
+          <a href="#"
+            class="text-secondary font-bold text-base px-[15px] py-2.5 rounded-md hover:text-primary hover:translate-y-[-10px] transition-all ease-in duration-300">Home</a>
+
+          <!-- About Us -->
+          <a href="#"
+            class="px-4 py-2 text-sm font-medium text-gray-700 rounded-md hover:text-brand hover:bg-orange-50 transition-colors">About
+            Us</a>
+
+          <!-- Services dropdown -->
+          <div class="relative" id="services-dropdown-wrapper">
+            <button onclick="toggleDropdown('services-dropdown', this)"
+              class="flex items-center gap-1 px-4 py-2 text-sm font-medium text-gray-700 rounded-md hover:text-brand hover:bg-orange-50 transition-colors">
+              Services
+              <svg class="chevron w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div id="services-dropdown"
+              class="dropdown-menu absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-xl border border-gray-100 py-1 z-50">
+              <a href="#"
+                class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-orange-50 hover:text-brand transition-colors">Business
+                Consulting</a>
+              <a href="#"
+                class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-orange-50 hover:text-brand transition-colors">Finance
+                Management</a>
+              <a href="#"
+                class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-orange-50 hover:text-brand transition-colors">Investment
+                Management</a>
+              <a href="#"
+                class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-orange-50 hover:text-brand transition-colors">Market
+                Research</a>
+              <a href="#"
+                class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-orange-50 hover:text-brand transition-colors">Procurement
+                Consulting</a>
+              <a href="#"
+                class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-orange-50 hover:text-brand transition-colors">Strategic
+                Consulting</a>
+            </div>
+          </div>
+
+          <!-- Blog dropdown -->
+          <div class="relative" id="blog-dropdown-wrapper">
+            <button onclick="toggleDropdown('blog-dropdown', this)"
+              class="flex items-center gap-1 px-4 py-2 text-sm font-medium text-gray-700 rounded-md hover:text-brand hover:bg-orange-50 transition-colors">
+              Blog
+              <svg class="chevron w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div id="blog-dropdown"
+              class="dropdown-menu absolute top-full left-0 mt-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100 py-1 z-50">
+              <a href="#"
+                class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-orange-50 hover:text-brand transition-colors">Latest
+                Posts</a>
+              <a href="#"
+                class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-orange-50 hover:text-brand transition-colors">Categories</a>
+              <a href="#"
+                class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-orange-50 hover:text-brand transition-colors">Authors</a>
+            </div>
+          </div>
+
+          <!-- Contact Us -->
+          <a href="#"
+            class="px-4 py-2 text-sm font-medium text-gray-700 rounded-md hover:text-brand hover:bg-orange-50 transition-colors">Contact
+            Us</a>
+        </div>
+
+        <!-- CTA + Hamburger -->
+        <div class="flex items-center gap-3">
+          <a href="#"
+            class="hidden lg:inline-flex items-center px-5 py-2 text-sm font-semibold text-dark border-2 border-dark rounded-full hover:bg-dark hover:text-white transition-all duration-200">
+            Try It Now
+          </a>
+
+          <!-- Hamburger (mobile) -->
+          <button id="hamburger-btn" onclick="toggleMobileMenu()" aria-label="Open menu"
+            class="lg:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 rounded-md hover:bg-gray-100 transition-colors">
+            <span id="ham-line1" class="block w-5 h-0.5 bg-dark transition-all duration-300 origin-center"></span>
+            <span id="ham-line2" class="block w-5 h-0.5 bg-dark transition-all duration-300"></span>
+            <span id="ham-line3" class="block w-5 h-0.5 bg-dark transition-all duration-300 origin-center"></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- OVERLAY -->
+  <div id="overlay" onclick="closeMobileMenu()" class="fixed inset-0 bg-black/30 z-40 backdrop-blur-sm"></div>
+
+  <!-- MOBILE MENU -->
+  <aside id="mobile-menu"
+    class="fixed top-0 right-0 h-full w-[300px] bg-white z-50 shadow-2xl flex flex-col overflow-y-auto">
+    <!-- Mobile header -->
+    <div class="flex items-center justify-between px-5 py-4 border-b border-gray-100">
+      <a href="#" class="flex items-center gap-2">
+        <svg width="28" height="24" viewBox="0 0 32 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="0,0 18,0 10,14 18,14 8,28 0,28 10,14 2,14" fill="#1A1A2E" />
+          <polygon points="14,0 32,0 24,14 32,14 22,28 14,28 24,14 16,14" fill="#E8501A" opacity="0.85" />
+        </svg>
+        <span class="text-lg font-bold text-dark">Zedello</span>
+      </a>
+      <button onclick="closeMobileMenu()" aria-label="Close menu"
+        class="w-9 h-9 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors text-gray-600">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Nav Items -->
+    <nav class="flex-1 py-2">
+      <!-- Home (active) -->
+      <a href="#" class="flex items-center px-5 py-4 text-sm font-semibold text-white bg-brand">Home</a>
+
+      <div class="border-t border-gray-100"></div>
+
+      <!-- About Us -->
+      <a href="#"
+        class="flex items-center px-5 py-4 text-sm font-medium text-gray-700 hover:bg-orange-50 hover:text-brand transition-colors">About
+        Us</a>
+
+      <div class="border-t border-gray-100"></div>
+
+      <!-- Pages accordion -->
+      <div>
+        <button id="mobile-pages-btn" onclick="toggleMobileAccordion('mobile-pages')"
+          class="w-full flex items-center justify-between px-5 py-4 text-sm font-medium text-gray-700 bg-white hover:bg-orange-50 hover:text-brand transition-colors">
+          <span>Pages</span>
+          <svg id="mobile-pages-chevron" class="chevron w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div id="mobile-pages" class="mobile-sub-menu bg-gray-50">
+          <a href="#"
+            class="block px-8 py-3 text-sm text-gray-600 hover:text-brand transition-colors border-t border-gray-100">Our
+            Team</a>
+          <a href="#"
+            class="block px-8 py-3 text-sm text-gray-600 hover:text-brand transition-colors border-t border-gray-100">Testimonials</a>
+          <a href="#"
+            class="block px-8 py-3 text-sm text-gray-600 hover:text-brand transition-colors border-t border-gray-100">Pricing</a>
+          <a href="#"
+            class="block px-8 py-3 text-sm text-gray-600 hover:text-brand transition-colors border-t border-gray-100">FAQ</a>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-100"></div>
+
+      <!-- Services accordion (closed by default) -->
+      <div>
+        <button id="mobile-services-btn" onclick="toggleMobileAccordion('mobile-services')"
+          class="w-full flex items-center justify-between px-5 py-4 text-sm font-semibold text-gray-700 bg-white hover:bg-orange-50 hover:text-brand transition-colors">
+          <span>Services</span>
+          <svg id="mobile-services-chevron" class="chevron w-4 h-4" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div id="mobile-services" class="mobile-sub-menu bg-gray-50">
+          <a href="#"
+            class="block px-8 py-3 text-sm text-gray-600 hover:text-brand transition-colors border-t border-gray-100">Business
+            Consulting</a>
+          <a href="#"
+            class="block px-8 py-3 text-sm text-gray-600 hover:text-brand transition-colors border-t border-gray-100">Finance
+            Management</a>
+          <a href="#"
+            class="block px-8 py-3 text-sm text-gray-600 hover:text-brand transition-colors border-t border-gray-100">Investment
+            Management</a>
+          <a href="#"
+            class="block px-8 py-3 text-sm text-gray-600 hover:text-brand transition-colors border-t border-gray-100">Market
+            Research</a>
+          <a href="#"
+            class="block px-8 py-3 text-sm text-gray-600 hover:text-brand transition-colors border-t border-gray-100">Procurement
+            Consulting</a>
+          <a href="#"
+            class="block px-8 py-3 text-sm text-gray-600 hover:text-brand transition-colors border-t border-gray-100">Strategic
+            Consulting</a>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-100"></div>
+
+      <!-- Blog accordion -->
+      <div>
+        <button id="mobile-blog-btn" onclick="toggleMobileAccordion('mobile-blog')"
+          class="w-full flex items-center justify-between px-5 py-4 text-sm font-medium text-gray-700 bg-white hover:bg-orange-50 hover:text-brand transition-colors">
+          <span>Blog</span>
+          <svg id="mobile-blog-chevron" class="chevron w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div id="mobile-blog" class="mobile-sub-menu bg-gray-50">
+          <a href="#"
+            class="block px-8 py-3 text-sm text-gray-600 hover:text-brand transition-colors border-t border-gray-100">Latest
+            Posts</a>
+          <a href="#"
+            class="block px-8 py-3 text-sm text-gray-600 hover:text-brand transition-colors border-t border-gray-100">Categories</a>
+          <a href="#"
+            class="block px-8 py-3 text-sm text-gray-600 hover:text-brand transition-colors border-t border-gray-100">Authors</a>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-100"></div>
+
+      <!-- Contact Us -->
+      <a href="#"
+        class="flex items-center px-5 py-4 text-sm font-medium text-gray-700 hover:bg-orange-50 hover:text-brand transition-colors">Contact
+        Us</a>
+
+      <div class="border-t border-gray-100"></div>
+    </nav>
+
+    <!-- Mobile CTA -->
+    <div class="p-5 border-t border-gray-100">
+      <a href="#"
+        class="block w-full text-center px-5 py-3 text-sm font-semibold text-white bg-brand rounded-full hover:bg-orange-600 transition-colors">
+        Try It Now
+      </a>
+    </div>
+  </aside>
+
+  <!-- PAGE DEMO CONTENT -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+    <p class="text-xs uppercase tracking-widest text-brand font-semibold mb-4">Fully Responsive</p>
+    <h1 class="text-4xl md:text-5xl font-bold text-dark mb-6 leading-tight">Zedello Navigation Bar</h1>
+    <p class="text-gray-500 text-lg max-w-xl mx-auto">Resize the window to see the mobile slide-in menu. Desktop
+      dropdowns close when clicking outside.</p>
+  </main>
+
+  <script>
+    // ── Desktop dropdowns ──────────────────────────────────────────────────────
+    const openDropdowns = new Set();
+
+    function toggleDropdown(id, btn) {
+      const menu = document.getElementById(id);
+      const chevron = btn.querySelector('.chevron');
+      const isOpen = menu.classList.contains('open');
+
+      // Close all others
+      closeAllDropdowns();
+
+      if (!isOpen) {
+        menu.classList.add('open');
+        chevron.classList.add('rotated');
+        openDropdowns.add(id);
+      }
+    }
+
+    function closeAllDropdowns() {
+      document.querySelectorAll('.dropdown-menu.open').forEach(m => m.classList.remove('open'));
+      document.querySelectorAll('.dropdown-menu').forEach(m => {
+        const btn = m.previousElementSibling;
+        if (btn) btn.querySelector('.chevron')?.classList.remove('rotated');
+      });
+      openDropdowns.clear();
+    }
+
+    // Close dropdowns on outside click
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('[id$="-dropdown-wrapper"]')) {
+        closeAllDropdowns();
+      }
+    });
+
+    // ── Mobile menu ───────────────────────────────────────────────────────────
+    const mobileMenu = document.getElementById('mobile-menu');
+    const overlay = document.getElementById('overlay');
+    const body = document.body;
+
+    function toggleMobileMenu() {
+      const isOpen = mobileMenu.classList.contains('open');
+      isOpen ? closeMobileMenu() : openMobileMenu();
+    }
+
+    function openMobileMenu() {
+      mobileMenu.classList.add('open');
+      overlay.classList.add('open');
+      body.style.overflow = 'hidden';
+      animateHamburger(true);
+    }
+
+    function closeMobileMenu() {
+      mobileMenu.classList.remove('open');
+      overlay.classList.remove('open');
+      body.style.overflow = '';
+      animateHamburger(false);
+    }
+
+    function animateHamburger(toX) {
+      const l1 = document.getElementById('ham-line1');
+      const l2 = document.getElementById('ham-line2');
+      const l3 = document.getElementById('ham-line3');
+      if (toX) {
+        l1.style.transform = 'translateY(6px) rotate(45deg)';
+        l2.style.opacity = '0';
+        l3.style.transform = 'translateY(-6px) rotate(-45deg)';
+      } else {
+        l1.style.transform = '';
+        l2.style.opacity = '1';
+        l3.style.transform = '';
+      }
+    }
+
+    // ── Mobile accordions ─────────────────────────────────────────────────────
+    function toggleMobileAccordion(id) {
+      const sub = document.getElementById(id);
+      const chevron = document.getElementById(id + '-chevron');
+      const btn = document.getElementById(id + '-btn');
+      const isOpen = sub.classList.contains('open');
+
+      sub.classList.toggle('open', !isOpen);
+      chevron?.classList.toggle('rotated', !isOpen);
+
+      // Swap orange active style on the button
+      if (btn) {
+        if (!isOpen) {
+          // Opening: make it orange
+          btn.classList.add('bg-brand', 'text-white');
+          btn.classList.remove('text-gray-700', 'bg-white', 'hover:bg-orange-50', 'hover:text-brand');
+        } else {
+          // Closing: back to normal
+          btn.classList.remove('bg-brand', 'text-white');
+          btn.classList.add('text-gray-700', 'bg-white', 'hover:bg-orange-50', 'hover:text-brand');
+        }
+      }
+    }
+
+    // Close mobile menu on resize to desktop
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 1024) closeMobileMenu();
+    });
+  </script>
+</body>
+
+</html>

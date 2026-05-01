@@ -15,21 +15,151 @@
   <link rel="stylesheet" href="./css/style.min.css">
 </head>
 
-<body class="">
+<body class="2xl:mt-[118px] lg:mt-[98px] mt-20">
+
+  <!-- HEADER -->
+  <header class="bg-accent shadow-mdw-full z-50 py-5 fixed top-0 left-0 w-full">
+    <div class="xl:container mx-auto 2xl:p-2.5 px-5">
+      <div class="flex items-center justify-between">
+
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-2">
+          <img src="./images/logo.png" alt="logo" class="w-[150px]">
+        </a>
+
+        <!-- Desktop Menu -->
+        <nav class="hidden lg:flex items-center gap-3">
+
+          <a href="#"
+            class="text-secondary font-bold text-base px-[15px] py-2.5 rounded-md hover:text-primary hover:translate-y-[-10px] transition-all ease-in duration-300">Home</a>
+          <a href="#"
+            class="text-secondary font-bold text-base px-[15px] py-2.5 rounded-md hover:text-primary hover:translate-y-[-10px] transition-all ease-in duration-300">About
+            Us</a>
+
+          <!-- Services Dropdown -->
+          <div class="relative group">
+            <button
+              class="flex items-center gap-2 text-secondary font-bold text-base px-[15px] py-2.5 rounded-md group-hover:text-primary hover:translate-y-[-10px] transition-all ease-in duration-300">
+              Services
+              <i class="fa-solid fa-chevron-down" id="arrow"></i>
+            </button>
+
+            <div
+              class="absolute left-0 mt-2 w-60 bg-accent rounded-[10px] shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+              <ul class="divide-y divide-a437f09">
+                <li><a href="#"
+                    class="block text-secondary px-4 py-[18px] font-medium hover:bg-primary hover:text-accent rounded-t-[10px]">Business
+                    Consulting</a></li>
+                <li><a href="#"
+                    class="block text-secondary px-4 py-[18px] font-medium hover:bg-primary hover:text-accent ">Finance
+                    Management</a></li>
+                <li><a href="#"
+                    class="block text-secondary px-4 py-[18px] font-medium hover:bg-primary hover:text-accent ">Investment
+                    Management</a></li>
+                <li><a href="#"
+                    class="block text-secondary px-4 py-[18px] font-medium hover:bg-primary hover:text-accent ">Market
+                    Research</a></li>
+                <li><a href="#"
+                    class="block text-secondary px-4 py-[18px] font-medium hover:bg-primary hover:text-accent ">Procurement
+                    Consulting</a></li>
+                <li><a href="#"
+                    class="block text-secondary px-4 py-[18px] font-medium hover:bg-primary hover:text-accent rounded-b-[10px]">Strategic
+                    Consulting</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <a href="#"
+            class="text-secondary font-bold text-base px-[15px] py-2.5 rounded-md hover:text-primary hover:translate-y-[-10px] transition-all ease-in duration-300">Blog</a>
+          <a href="#"
+            class="text-secondary font-bold text-base px-[15px] py-2.5 rounded-md hover:text-primary hover:translate-y-[-10px] transition-all ease-in duration-300">Contact
+            Us</a>
+
+          <!-- CTA -->
+          <a href="#"
+            class="border-secondary border-2 text-secondary hover:bg-secondary hover:text-accent rounded-full font-bold text-base py-[15px] px-[30px] hover:scale-110 transition-all ease-in duration-300">
+            Try It Now
+          </a>
+
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button id="menuBtn" class="lg:hidden text-2xl text-text"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE MENU -->
+  <div id="mobileMenu"
+    class="fixed top-0 left-0 w-80 h-full bg-accent shadow-lg transform -translate-x-full transition-transform duration-300 z-50">
+
+    <!-- Top -->
+    <div class="flex items-center justify-between p-4 border-b border-a437f09">
+      <img src="./images/logo.png" alt="logo" class="w-[150px]">
+      <button id="closeBtn"><i class="fa-solid fa-x"></i></button>
+    </div>
+
+    <!-- Links -->
+    <nav class="flex flex-col text-text divide-y divide-a437f09 overflow-y-scroll h-[85vh]">
+
+      <a href="#"
+        class="text-secondary font-medium text-base px-[15px] py-4 rounded-md hover:text-primary hover:translate-y-[-10px] transition-all ease-in duration-300">Home</a>
+      <a href="#"
+        class="text-secondary font-medium text-base px-[15px] py-4 rounded-md hover:text-primary hover:translate-y-[-10px] transition-all ease-in duration-300">About
+        Us</a>
+
+      <!-- Services -->
+      <button id="serviceToggle"
+        class="p-4 flex justify-between items-center text-secondary font-medium text-base px-[15px] py-4 rounded-md hover:text-primary hover:translate-y-[-10px] transition-all ease-in duration-300">
+        Services
+        <span id="arrow" class="transition-transform"><i class="fa-solid fa-chevron-down" id="arrow"></i></span>
+      </button>
+
+      <div id="serviceMenu" class="hidden flex flex-col divide-y divide-a437f09">
+        <a href="#"
+          class="text-secondary font-medium text-base px-[15px] py-4 rounded-md hover:text-primary hover:translate-y-[-10px] transition-all ease-in duration-300">Business
+          Consulting</a>
+        <a href="#"
+          class="text-secondary font-medium text-base px-[15px] py-4 rounded-md hover:text-primary hover:translate-y-[-10px] transition-all ease-in duration-300">Finance
+          Management</a>
+        <a href="#"
+          class="text-secondary font-medium text-base px-[15px] py-4 rounded-md hover:text-primary hover:translate-y-[-10px] transition-all ease-in duration-300">Investment
+          Management</a>
+        <a href="#"
+          class="text-secondary font-medium text-base px-[15px] py-4 rounded-md hover:text-primary hover:translate-y-[-10px] transition-all ease-in duration-300">Market
+          Research</a>
+        <a href="#"
+          class="text-secondary font-medium text-base px-[15px] py-4 rounded-md hover:text-primary hover:translate-y-[-10px] transition-all ease-in duration-300">Procurement
+          Consulting</a>
+        <a href="#"
+          class="text-secondary font-medium text-base px-[15px] py-4 rounded-md hover:text-primary hover:translate-y-[-10px] transition-all ease-in duration-300">Strategic
+          Consulting</a>
+      </div>
+
+      <a href="#"
+        class="text-secondary font-medium text-base px-[15px] py-4 rounded-md hover:text-primary hover:translate-y-[-10px] transition-all ease-in duration-300">Blog</a>
+      <a href="#"
+        class="text-secondary font-medium text-base px-[15px] py-4 rounded-md hover:text-primary hover:translate-y-[-10px] transition-all ease-in duration-300">Contact
+        Us</a>
+
+    </nav>
+  </div>
 
   <!-- Home Page -->
-  <!-- - More than numbers curved hero -->
-  <section class="py-[70px] relative bg-cc2395c min-h-80 moreThan">
+  <!-- - More than numbers curved hero Responsive done -->
+  <section class="md:py-[60px] pt-[60px] pb-[40px] relative bg-cc2395c min-h-80 moreThan overflow-x-hidden">
     <div
       class="overlay bg-[url(../images/img-bg-02-b-min-e1691103428504.jpg)] bg-cover bg-center bg-no-repeat opacity-20 mix-blend-multiply absolute transition-all duration-300 top-0 left-0 right-0 bottom-0 z-10">
     </div>
-    <div class="lg:container mx-auto p-2.5 relative z-20">
-      <div class="grid xl:grid-cols-2 items-center xl:gap-0 gap-[60px] xl:px-0 px-[30px]">
-        <div class="col-span-1 ">
-          <h1 class="text-[62px] font-extrabold leading-[1.1em] text-text my-4 xl:max-w-[540px]">More than
+    <div class="lg:container mx-auto 2xl:p-2.5 px-5 relative z-20">
+      <div class="grid xl:grid-cols-2 items-center xl:gap-0 gap-[60px] xl:px-0 md:px-[30px] px-[20px]">
+        <div class="col-span-1 2xl:pl-0 xl:pl-5">
+          <h1 class="md:text-[62px] text-[40px] font-extrabold leading-[1.1em] text-text my-4 xl:max-w-[540px]">
+            More than
             numbers,
             financial solutions</h1>
-          <p class="text-text text-xl font-medium leading-[1.8rem] mb-8">Need retirement or financial
+          <p class="text-text md:text-xl text-lg font-medium leading-[1.8rem] mb-8">Need retirement or
+            financial
             management
             guidance? <br>
             We're here to assist.</p>
@@ -45,83 +175,90 @@
           <div class="">
             <img src="./images/business-people-in-the-office-consulting-a-project-2021-08-26-12-07-46-utc-min.jpg"
               alt="business-people-in-the-office-consulting-a-project-2021-08-26-12-07-46-utc-min"
-              class="w-full min-h-[520px] object-cover object-center brightness-100 contrast-100 saturate-0 blur-none hue-rotate-0 rounded-[40px_40px_200px_40px]">
+              class="w-full md:min-h-[520px] min-h-[290px] object-cover object-center brightness-100 contrast-100 saturate-0 blur-none hue-rotate-0 rounded-[40px_40px_200px_40px]">
           </div>
           <div
-            class="absolute top-[-30px] left-[-30px] scale-[-1] w-[150px] h-[150px] bg-secondary mask-[url(../images/img-shape-21-min.webp)] mask-contain mask-[center_left] mask-no-repeat moreThanShape">
+            class="absolute top-[-30px] left-[-30px] scale-[-1] md:w-[150px] w-[100px] md:h-[150px] h-[100px] bg-secondary mask-[url(../images/img-shape-21-min.webp)] mask-contain mask-[center_left] mask-no-repeat moreThanShape">
           </div>
           <div
-            class="absolute right-[-30%] top-[32%] w-[150px] h-[150px] bg-accent mask-[url(../images/img-shape-14-min.png)] mask-contain mask-[center_left] mask-no-repeat z-20">
+            class="absolute right-[-30%] top-[32%] md:w-[150px] w-[100px] md:h-[150px] h-[100px] bg-accent mask-[url(../images/img-shape-14-min.png)] mask-contain mask-[center_left] mask-no-repeat z-20 xl:block hidden">
           </div>
 
           <div
-            class="absolute bottom-0 right-0 translate-x-[30px] translate-y-[30px] w-[200px] h-[200px] bg-accent mask-[url(../images/img-shape-16-min.png)] mask-contain mask-[center_left] mask-no-repeat">
+            class="absolute bottom-0 right-0 translate-x-[30px] translate-y-[30px] md:w-[200px] w-[120px] h-[150px] md:h-[200px] bg-accent mask-[url(../images/img-shape-16-min.png)] mask-contain mask-[center_left] mask-no-repeat">
           </div>
 
         </div>
       </div>
     </div>
-    <div class="absolute right-0 bottom-0 w-[600px] max-w-[600px] h-[600px] z-10">
+    <div
+      class="absolute right-0 bottom-0 md:w-[600px] w-[300px] md:max-w-[600px] max-w-[300px] md:h-[600px] h-[300px] z-10">
       <div
-        class=" bg-primary mask-[url(../images/img-shape-19-min.webp)] mask-contain mask-[bottom_right] mask-no-repeat max-w-[600px] h-[600px]">
+        class=" bg-primary mask-[url(../images/img-shape-19-min.webp)] mask-contain mask-[bottom_right] mask-no-repeat md:max-w-[600px] max-w-[300px] md:h-[600px] h-[300px]">
       </div>
     </div>
 
-    <div class="absolute right-0 bottom-0 w-[600px] max-w-[580px] h-[580px] z-10">
+    <div
+      class="absolute right-0 bottom-0 md:w-[600px] w-[280px] md:max-w-[580px] max-w-[280px] md:h-[580px] h-[280px] z-10">
       <div
-        class=" bg-primary mask-[url(../images/img-shape-19-min.webp)] mask-contain mask-[bottom_right] mask-no-repeat max-w-[580px] h-[580px]">
+        class=" bg-primary mask-[url(../images/img-shape-19-min.webp)] mask-contain mask-[bottom_right] mask-no-repeat md:max-w-[580px] max-w-[280px] md:h-[580px] h-[280px]">
       </div>
     </div>
-    <div class="absolute right-0 bottom-0 w-[600px] max-w-[600px] h-[550px] z-10">
+    <div
+      class="absolute right-0 bottom-0 md:w-[600px] w-[250px] md:max-w-[600px] max-w-[250px] md:h-[550px] h-[250px] z-10">
       <div
-        class=" bg-primary mask-[url(../images/img-shape-19-min.webp)] mask-contain mask-[bottom_right] mask-no-repeat max-w-[600px] h-[550px]">
+        class=" bg-primary mask-[url(../images/img-shape-19-min.webp)] mask-contain mask-[bottom_right] mask-no-repeat md:max-w-[600px] max-w-[250px] md:h-[550px] h-[250px]">
       </div>
     </div>
 
 
 
   </section>
-  <!-- - Automate your finances - logo background -->
-  <section class="pt-[60px] automate ">
-    <div class="xl:container mx-auto p-2.5 !pb-0">
-      <div class="grid grid-cols-2 gap-5 items-center">
+
+  <!-- - Automate your finances - logo background Responsive done-->
+  <section class="md:pt-[60px] pt-10 automate overflow-x-hidden overflow-y-hidden">
+    <div class="xl:container mx-auto 2xl:p-2.5 px-5 !pb-0">
+      <div class="grid xl:grid-cols-2 gap-5 items-center">
         <!-- left side image  -->
-        <div class="relative ">
+        <div class="relative xl:order-1 order-2">
           <div class="">
             <img src="./images/img-person-1-min.webp" alt="person"
-              class="brightness-100 contrast-100 saturate-0 blur-none hue-rotate-0 mx-auto w-[450px] relative z-40">
+              class="brightness-100 contrast-100 saturate-0 blur-none hue-rotate-0 mx-auto w-[320px] md:w-[450px] relative z-40">
             <div
-              class="bg-accent shadow-[0_0_40px_0_rgba(0,0,0,0.101)] rounded-[10px] p-10 w-full max-w-[320px] absolute left-0 bottom-[60px] z-40">
-              <h3 class="text-[44px] font-bold leading-[1.2em] text-primary">3.6K</h3>
-              <p class="text-lg text-secondary leading-[1.6em] font-bold">The greater the profitability
+              class="bg-accent shadow-[0_0_40px_0_rgba(0,0,0,0.101)] rounded-[10px] md:p-10 p-[30px] w-full md:max-w-[320px] max-w-[275px] absolute left-0 bottom-[60px] z-40">
+              <h3 class="md:text-[44px] text-[32px] font-bold leading-[1.2em] text-primary">3.6K</h3>
+              <p class="md:text-lg text-base text-secondary leading-[1.6em] font-bold">The greater the
+                profitability
               </p>
             </div>
           </div>
           <!-- shape 1  -->
           <div
-            class="mask-[url(../images/img-shape-23-min.png)] mask-contain mask-center mask-no-repeat bg-transparent bg-[linear-gradient(130deg,#1c1e27_50%,#fc653c_0%)] w-[620px] h-[600px] absolute top-26 left-0 -z-10 automateShape1">
+            class="mask-[url(../images/img-shape-23-min.png)] mask-contain mask-center mask-no-repeat bg-transparent bg-[linear-gradient(130deg,#1c1e27_50%,#fc653c_0%)] w-[320px] md:w-[620px] md:h-[600px] h-[420px] absolute top-26 left-0 -z-10 automateShape1">
           </div>
           <!-- shape 2  -->
           <div
-            class="absolute top-[22%] -left-3 w-[150px] h-[150px] bg-primary mask-[url(../images/img-shape-16-min.png)] mask-contain mask-[center_left] mask-no-repeat z-10 automateShape2">
+            class="absolute top-[22%] -left-3 w-[150px] md:h-[150px] h-10 bg-primary mask-[url(../images/img-shape-16-min.png)] mask-contain mask-[center_left] mask-no-repeat z-10 automateShape2">
           </div>
           <!-- shape 3  -->
           <div
-            class="mask-contain mask-no-repeat mask-[center_center] mask-[url(../images/img-shape-13-min.png)] bg-primary w-[160px] h-[80px] absolute left-10 top-0 mx-auto z-10 automateShape2">
+            class="mask-contain mask-no-repeat mask-[center_center] mask-[url(../images/img-shape-13-min.png)] bg-primary w-[160px] md:h-[80px] h-10px absolute left-10 top-0 mx-auto z-10 automateShape2">
           </div>
           <!-- shape 4 -->
           <div
-            class="mask-contain mask-no-repeat mask-[center_center] mask-[url(../images/img-shape-15-min.png)] bg-primary w-[80px] h-[80px] absolute top-[-2%] right-0 mx-auto z-10 automateShape4">
+            class="mask-contain mask-no-repeat mask-[center_center] mask-[url(../images/img-shape-15-min.png)] bg-primary md:w-[80px] w-10 md:h-[80px] h-10 absolute top-[-2%] right-0 mx-auto z-10 automateShape4">
           </div>
 
         </div>
         <!-- content side  -->
-        <div class="pl-[60px] relative">
+        <div class="xl:pl-[60px] relative xl:order-2 order-1">
           <h4 class="text-sm text-primary font-extrabold leading-[1.5em] uppercase">▬ Automate your finances ▬
           </h4>
-          <h2 class="text-[44px] font-bold leading-[1.2em] mt-9 mb-4 text-secondary">Your finances are being
+          <h2 class="md:text-[44px] text-[32px] font-bold leading-[1.2em] mt-9 mb-4 text-secondary">Your
+            finances are being
             managed by experienced professionals</h2>
-          <p class="text-lg text-secondary leading-[1.8em]">Auctor elit sed vulputate mi. Feugiat nibh sed
+          <p class="text-base md:text-lg text-secondary leading-[1.8em]">Auctor elit sed vulputate mi. Feugiat
+            nibh sed
             pulvinar proin
             gravida hendrerit. Diam volutpat commodo sed egestas egestas. Id aliquet lectus proin nibh nisl.
             Viverra nam libero justo laoreet sit amet cursus sit. Faucibus purus in massa tempor.</p>
@@ -132,10 +269,10 @@
                 alt="collage-of-smiling-and-happy-multiethnic-people-2022-12-16-09-04-17-utc-min"
                 class="rounded-full w-20 h-20 brightness-100 contrast-100 saturate-0 blur-none hue-rotate-0">
             </div>
-            <div class="text-end py-2.5">
+            <div class="text-start py-2.5">
               <!-- <img src="" alt=""> -->
               <div
-                class="mask-contain mask-right mask-no-repeat mask-[url(../images/img-signature-01-min.png)] bg-primary w-[170px] h-[70px]">
+                class="mask-contain mask-right mask-no-repeat mask-[url(../images/img-signature-01-min.png)] bg-primary md:w-[170px] w-[150px] md:h-[70px] h-[60px]">
               </div>
 
             </div>
@@ -143,31 +280,31 @@
           </div>
           <!-- shape 5  -->
           <div
-            class="mask-[url(../images/img-shape-21-min.png)] mask-contain mask-center mask-no-repeat bg-secondary w-[80px] h-[80px] ml-auto mt-2.5 scale-y-[-1] absolute top-[-25%] right-0 automatedShape5">
+            class="mask-[url(../images/img-shape-21-min.png)] mask-contain mask-center mask-no-repeat bg-secondary md:w-[80px] w-10 md:h-[80px] h-10 ml-auto mt-2.5 scale-y-[-1] absolute md:top-[-25%] top-[-10%] right-0 automatedShape5">
           </div>
         </div>
       </div>
     </div>
   </section>
-  <!-- - Rigourous approach - image left and two callouts on right -->
-  <section class="py-[60px] relative bg-secondary z-10">
+  <!-- - Rigourous approach - image left and two callouts on right Responsive done -->
+  <section class="md:py-[60px] py-10 relative bg-secondary z-10">
     <div
       class="brightness-100 contrast-100 bg-[url(../images/img-shape-10-min.webp)] bg-contain bg-bottom-left bg-no-repeat opacity-5 mix-blend-luminosity absolute transition-all duration-300 top-0 left-0 right-0 bottom-0 z-10">
     </div>
 
 
-    <div class="xl:container px-2.5 mx-auto relative z-30 flex flex-col gap-[50px]">
+    <div class="xl:container 2xl:px-2.5 px-5 mx-auto relative z-30 flex flex-col gap-[50px]">
       <!-- top card item -->
-      <div class="grid grid-cols-11 gap-8">
-        <div class="col-span-7">
-          <div class="grid grid-cols-3">
+      <div class="grid xl:grid-cols-11 grid-cols-1 gap-8">
+        <div class="xl:col-span-7">
+          <div class="grid md:grid-cols-3 col-span-1">
             <!-- single item start  -->
             <div class="flex flex-col gap-2.5 p-2.5">
               <!-- <img src="./images/icon-contact-us-3-min.png" alt="icon-contact-us-3-min" class="w-10 h-10"> -->
               <div class="image-mask mask-[url(../images/icon-contact-us-3-min.png)] bg-accent w-10 h-10">
               </div>
               <div class="">
-                <h4 class="text-lg font-bold text-accent leading-[1.6em]">Real support</h4>
+                <h4 class="md:text-lg text-base font-bold text-accent leading-[1.6em]">Real support</h4>
                 <a href="tel:254-568-5274" class="text-primary text-base font-medium leading-[1.8em]">254-568-5274</a>
               </div>
             </div>
@@ -179,7 +316,8 @@
               <div class="image-mask mask-[url(../images/icon-contact-us-2-min.png)] bg-accent w-10 h-10">
               </div>
               <div class="">
-                <h4 class="text-lg font-bold text-accent leading-[1.6em]">Your email registration</h4>
+                <h4 class="md:text-lg text-base font-bold text-accent leading-[1.6em]">Your email
+                  registration</h4>
                 <a href="mailto:noemail@domain.com"
                   class="text-primary text-base font-medium leading-[1.8em]">noemail@domain.com</a>
               </div>
@@ -192,7 +330,7 @@
               <div class="image-mask mask-[url(../images/icon-contact-us-1-min.webp)] bg-accent w-10 h-10">
               </div>
               <div class="">
-                <h4 class="text-lg font-bold text-accent leading-[1.6em]">Where are we</h4>
+                <h4 class="md:text-lg text-base font-bold text-accent leading-[1.6em]">Where are we</h4>
                 <a href="" class="text-primary text-base font-medium leading-[1.8em]">1448 Elliott
                   Street - NY</a>
               </div>
@@ -202,39 +340,43 @@
 
           </div>
         </div>
-        <div class="col-span-4 p-2.5 flex flex-col gap-2.5">
-          <h3 class="text-2xl text-primary font-bold leading-[1.5em]">Operational management</h3>
+        <div class="xl:col-span-4 p-2.5 flex flex-col gap-2.5">
+          <h3 class="md:text-2xl text-xl text-primary font-bold leading-[1.5em]">Operational management</h3>
           <p class="text-base text-accent font-medium leading-[1.8em]">Fames ac turpis egestas maecenas
             pharetra.
             Sagittis eu volutpat odio facilisis mauris sit amet.</p>
         </div>
       </div>
       <!-- Pre negotiation start  -->
-      <div class="grid grid-cols-7 gap-10">
-        <div class="col-span-3 p-2.5">
+      <div class="grid xl:grid-cols-7 grid-cols-1 gap-10">
+        <div class="xl:col-span-3 p-2.5 h-full xl:order-1 order-2">
           <img src="./images/business-coworkers-consulting-in-office-2021-08-28-20-34-26-utc-min.jpg"
             alt="business-coworkers-consulting-in-office-2021-08-28-20-34-26-utc-min"
-            class="w-full min-h-[540px] object-cover object-center brightness-100 contrast-100 saturate-0 blur-none hue-rotate-0 rounded-[10px]">
+            class="w-full min-h-[250px] h-full object-cover object-center brightness-100 contrast-100 saturate-0 blur-none hue-rotate-0 rounded-[10px]">
         </div>
-        <div class="col-span-4 p-2.5">
+        <div class="xl:col-span-4 p-2.5  xl:order-2 order-1">
           <div class="mb-[30]">
-            <h4 class="text-primary text-sm font-medium leading-[1.8em] mb-7">▬ Pre negotiation ▬</h4>
-            <h2 class="text-[44px] text-accent font-bold leading-[1.2em] mb-4">We take a rigorous approach
+            <h4 class="text-sm text-primary font-extrabold leading-[1.5em] uppercase mb-7">▬ Pre negotiation
+              ▬</h4>
+            <h2 class="md:text-[44px] text-[32px] text-accent font-bold leading-[1.2em] mb-4">We take a
+              rigorous approach
               to risk
               management</h2>
-            <p class="text-lg text-accent font-medium leading-[1.8em]">Lorem ipsum dolor sit amet,
+            <p class="md:text-lg text-base text-accent font-medium leading-[1.8em]">Lorem ipsum dolor sit
+              amet,
               consectetur
               adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
           </div>
-          <div class="pt-10 grid grid-cols-2 gap-10">
+          <div class="pt-10 grid md:grid-cols-2 col-span-1 gap-10">
             <!-- single item start  -->
             <div>
-              <div class="bg-accent rounded-xl flex flex-col gap-2.5 p-10">
+              <div class="bg-accent rounded-xl flex flex-col gap-2.5 md:p-10 p-[30px]">
                 <!-- <img src="./images/icon-services-6-min.png" alt="icon-services-6-min" class="w-[60px]"> -->
                 <div class="image-mask mask-[url(../images/icon-services-6-min.png)] bg-primary w-[60px] h-[60px]">
                 </div>
                 <div class="">
-                  <h4 class="text-[22px] text-secondary font-bold leading-[1.5em] mb-1.5">Problem
+                  <h4 class="md:text-[22px] text-xl text-secondary font-bold leading-[1.5em] mb-1.5">
+                    Problem
                     diagnosis</h4>
                   <p class="text-base text-text font-medium leading-[1.8em]">Lorem ipsum dolor sit
                     amet, consectetur
@@ -245,13 +387,14 @@
 
             <!-- single item start  -->
             <div>
-              <div class="bg-accent rounded-xl flex flex-col gap-2.5 p-10 mt-[-30px]">
+              <div class="bg-accent rounded-xl flex flex-col gap-2.5 md:p-10 p-[30px] md:mt-[-30px]">
                 <!-- <img src="./images/icon-services-6-min.png" alt="icon-services-6-min" class="w-[60px]"> -->
 
                 <div class="image-mask mask-[url(../images/icon-services-8-min.webp)] bg-primary w-[60px] h-[60px]">
                 </div>
                 <div class="">
-                  <h4 class="text-[22px] text-secondary font-bold leading-[1.5em] mb-1.5">Data
+                  <h4 class="md:text-[22px] text-xl text-secondary font-bold leading-[1.5em] mb-1.5">
+                    Data
                     analysis</h4>
                   <p class="text-base text-text font-medium leading-[1.8em]">Lorem ipsum dolor sit
                     amet, consectetur
@@ -267,22 +410,30 @@
 
 
   </section>
-  <!-- - Boost your business - circle image on another image on right -->
+
+
+  <!-- - Boost your business - circle image on another image on right Responsive done-->
   <section class="bg-accent relative z-10 py-[60px] weHelp">
     <div class="xl:container mx-auto p-2.5">
-      <div class="grid grid-cols-11">
-        <div class="col-span-5 p-5 relative">
-          <div class="max-w-[496px]">
+      <div class="grid xl:grid-cols-11 grid-cols-1">
+        <div class="xl:col-span-5 col-span-1 p-5 relative xl:gap-0 gap-10">
+          <div class="xl:max-w-[496px] relative">
+            <div
+              class="absolute xl:right-[-48px] right-0 top-[-32px] w-[20px] h-[100px] bg-primary mask-[url(../images/img-shape-14-min.png)] mask-contain mask-[center_left] mask-no-repeat z-20 weHelpShape2 ">
+            </div>
             <h4 class="text-sm text-primary font-extrabold leading-[1.5em] uppercase">▬ boost your business
               ▬
 
             </h4>
-            <h2 class="text-[44px] font-bold text-secondary leading-[1.2em] mb-4 mt-[30px]">We help guide
+            <h2 class="text-[32px] md:text-[44px] font-bold text-secondary leading-[1.2em] mb-4 mt-[30px]">
+              We help guide
               the
               direction of your business</h2>
-            <p class="text-lg text-secondary leading-[1.8em] mb-10">Lorem ipsum dolor sit amet, consectetur
+            <p class="text-base md:text-lg text-secondary leading-[1.8em] mb-10">Lorem ipsum dolor sit amet,
+              consectetur
               adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
-            <p class="text-lg text-secondary leading-[1.8em]">Dignissim enim sit amet venenatis urna. Nullam
+            <p class="text-base md:text-lg text-secondary leading-[1.8em]">Dignissim enim sit amet venenatis
+              urna. Nullam
               ac
               tortor vitae purus faucibus ornare suspendisse. Platea dictumst vestibulum rhoncus est
               pellentesque elit ullamcorper.</p>
@@ -293,31 +444,31 @@
             </div>
           </div>
         </div>
-        <div class="col-span-6 p-5 w-full h-full relative">
-          <div class="relative w-full h-full min-h-[632px] flex items-center">
+        <div class="xl:col-span-6 col-span-1 p-5 w-full h-full relative">
+          <div
+            class="relative w-full h-full xl:min-h-[632px] lg:min-h-[861px] md:min-h-[682px] sm:min-h-[662px] min-h-[460px]  flex items-center">
 
             <!-- overlay image  -->
             <div
-              class="absolute top-0 right-0 w-full h-full bg-[url('../images/couple-with-business-consultants-at-the-office-2021-09-02-01-01-35-utc-min.jpg')] bg-position-[-330px_0px] bg-cover bg-no-repeat opacity-90 saturate-0 rounded-[90%_3%_3%_3%] mix-blend-luminosity -z-10">
+              class="absolute top-0 right-0 w-full h-full bg-[url('../images/couple-with-business-consultants-at-the-office-2021-09-02-01-01-35-utc-min.jpg')] md:bg-position-[-330px_0px] bg-position-[-300px_0px] bg-cover bg-no-repeat opacity-90 saturate-0 rounded-[90%_3%_3%_3%] mix-blend-luminosity -z-10">
             </div>
             <!-- shape start  -->
-            <div
-              class="absolute left-[-48px] top-[-32px] w-[20px] h-[100px] bg-primary mask-[url(../images/img-shape-14-min.png)] mask-contain mask-[center_left] mask-no-repeat z-20 weHelpShape2">
-            </div>
+
             <div
               class="absolute bottom-8 -left-10 w-[150px] h-[150px] bg-primary mask-[url(../images/img-shape-16-min.png)] mask-contain mask-[center_left] mask-no-repeat -z-10 weHelpShape04">
             </div>
             <div
-              class="mask-contain mask-no-repeat mask-[center_center] mask-[url(../images/img-shape-13-min.png)] bg-primary w-[170px] h-[80px] absolute left-0 -top-7 right-[100px] mx-auto z-20 weHelpShape1">
+              class="mask-contain mask-no-repeat mask-[center_center] mask-[url(../images/img-shape-13-min.png)] bg-primary w-[170px] md:h-[80px] h-[50px] absolute md:left-0 -top-7 md:right-[100px] right-0 mx-auto z-20 weHelpShape1">
             </div>
 
 
             <div
-              class=" bg-transparent bg-[linear-gradient(120deg,#1c1e27_53%,#fc653c_0%)] w-[332px] h-[332px] rounded-full -ml-10 relative  weHelpItem flex justify-center items-center">
+              class=" bg-transparent bg-[linear-gradient(120deg,#1c1e27_53%,#fc653c_0%)] xl:w-[332px] lg:w-[650px] sm:w-[450px] w-[280px]  xl:h-[332px] lg:h-[650px] sm:h-[450px] h-[280px]  rounded-full xl:-ml-10 relative  weHelpItem flex justify-center items-center">
               <div class="weHelpImage">
                 <img
                   src="./images/business-expert-at-work-2022-12-16-14-42-06-utc-min-r05rm50ej9o6ay5eypyfi4ti0u5hbnyqminzxtgx9s.jpg"
-                  alt="image" class="w-[302px] h-[302px] rounded-full object-cover object-center ">
+                  alt="image"
+                  class="xl:w-[302px] lg:w-[600px] w-[97%] xl:h-[302px] lg:h-[600px] h-[97%] rounded-full object-cover object-center mx-auto">
               </div>
             </div>
           </div>
@@ -328,27 +479,31 @@
 
     </div>
   </section>
-  <!-- - Pricing Plan -->
+  <!-- - Pricing Plan  Responsive done-->
   <section class="bg-linear-to-b from-[#f5f5f5] from-50% to-[#ffffff] to-50% py-[60px] itemWrapp">
-    <div class="xl:container mx-auto p-2.5 flex flex-col gap-[50px]">
+    <div class="xl:container mx-auto 2xl:p-2.5 px-5 flex flex-col gap-[50px]">
       <div class="flex flex-col gap-5 justify-center text-center">
         <h4 class="text-sm text-primary font-extrabold leading-[1.5em] uppercase">▬ Pricing plan ▬</h4>
-        <h2 class="text-[44px] text-text font-bold leading-[1.2em] max-w-[756px] mx-auto">Simple pricing plan
+        <h2 class="text-[32px] md:text-[44px] text-text font-bold leading-[1.2em] max-w-[756px] mx-auto">Simple
+          pricing plan
           for
           business investment</h2>
       </div>
-      <div class="grid grid-cols-3 gap-[30px]">
+      <div class="grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-[30px]">
         <!-- single item start  -->
-        <div class="item bg-primary rounded-[10px] shadow-[0px_0px_40px_0px_rgba(0,0,0,0.05)] p-[60px]">
-          <h4 class="text-[28px] font-bold leading-[1.4em] text-accent pt-2 mb-2.5">Basic plan</h4>
-          <p class="text-lg text-accent font-medium leading-[1.8em]">Ut elit tellus, luctus nec ullamcorper
+        <div
+          class="xl:col-span-1 lg:col-span-1 col-span-1  item bg-primary rounded-[10px] shadow-[0px_0px_40px_0px_rgba(0,0,0,0.05)] md:p-[60px] px-[30px] py-[40px]">
+          <h4 class="text-[23px] md:text-[28px] font-bold leading-[1.4em] text-accent pt-2 mb-2.5">Basic plan
+          </h4>
+          <p class="text-base md:text-lg text-accent font-medium leading-[1.8em]">Ut elit tellus, luctus nec
+            ullamcorper
             mattis,
             pulvinar dapibus leo.</p>
           <div class="mt-5">
             <div class="flex items-center gap-1">
               <span class="text-lg font-bold text-accent">$</span>
 
-              <span class="text-[54px] font-bold text-accent leading-[1.2em]">
+              <span class="text-[40px] md:text-[54px] font-bold text-accent leading-[1.2em]">
                 79
               </span>
 
@@ -382,7 +537,7 @@
             </ul>
             <div class="mt-10">
               <a href=""
-                class="hover:bg-primary text-accent px-6 py-3 rounded-full font-bold inline-flex bg-secondary transition-all duration-300 ease-in-out">Select
+                class="hover:bg-primary text-accent px-6 py-3 rounded-full font-bold inline-flex bg-secondary transition-all duration-300 ease-in-out sm:w-auto w-full justify-center">Select
                 plan</a>
             </div>
           </div>
@@ -390,16 +545,18 @@
 
         <!-- single item start  -->
         <div
-          class="item bg-[url(../images/img-bg-01-min.webp)] bg-cc2395c bg-cover bg-right bg-no-repeat rounded-[10px] shadow-[0px_0px_40px_0px_rgba(0,0,0,0.05)] p-[60px]">
-          <h4 class="text-[28px] font-bold leading-[1.4em] text-text pt-2 mb-2.5">Standard plan</h4>
-          <p class="text-lg text-text font-medium leading-[1.8em]">Ut elit tellus, luctus nec ullamcorper
+          class="xl:col-span-1 col-span-1 item bg-[url(../images/img-bg-01-min.webp)] bg-cc2395c bg-cover bg-right bg-no-repeat rounded-[10px] shadow-[0px_0px_40px_0px_rgba(0,0,0,0.05)] md:p-[60px] px-[30px] py-[40px]">
+          <h4 class="text-[23px] md:text-[28px] font-bold leading-[1.4em] text-text pt-2 mb-2.5">Standard plan
+          </h4>
+          <p class="text-base md:text-lg text-text font-medium leading-[1.8em]">Ut elit tellus, luctus nec
+            ullamcorper
             mattis,
             pulvinar dapibus leo.</p>
           <div class="mt-5">
             <div class="flex items-center gap-1">
               <span class="text-lg font-bold text-text">$</span>
 
-              <span class="text-[54px] font-bold text-text leading-[1.2em]">
+              <span class="text-[40px] md:text-[54px] font-bold text-text leading-[1.2em]">
                 79
               </span>
 
@@ -433,7 +590,7 @@
             </ul>
             <div class="mt-10">
               <a href=""
-                class="bg-primary text-accent px-6 py-3 rounded-full font-bold inline-flex hover:bg-secondary transition-all duration-300 ease-in-out">Select
+                class="bg-primary text-accent px-6 py-3 rounded-full font-bold inline-flex hover:bg-secondary transition-all duration-300 ease-in-out sm:w-auto w-full justify-center">Select
                 plan</a>
             </div>
           </div>
@@ -441,16 +598,18 @@
 
         <!-- single item start  -->
         <div
-          class="item bg-[url(../images/img-bg-01-min.webp)] bg-cc2395c bg-cover bg-right bg-no-repeat rounded-[10px] shadow-[0px_0px_40px_0px_rgba(0,0,0,0.05)] p-[60px]">
-          <h4 class="text-[28px] font-bold leading-[1.4em] text-text pt-2 mb-2.5">Premium plan</h4>
-          <p class="text-lg text-text font-medium leading-[1.8em]">Ut elit tellus, luctus nec ullamcorper
+          class="xl:col-span-1 lg:col-span-2 col-span-1 xl:w-auto lg:w-1/2 xl:mx-0 lg:mx-auto item bg-[url(../images/img-bg-01-min.webp)] bg-cc2395c bg-cover bg-right bg-no-repeat rounded-[10px] shadow-[0px_0px_40px_0px_rgba(0,0,0,0.05)] md:p-[60px] px-[30px] py-[40px]">
+          <h4 class="text-[23px] md:text-[28px] font-bold leading-[1.4em] text-text pt-2 mb-2.5">Premium plan
+          </h4>
+          <p class="text-base md:text-lg text-text font-medium leading-[1.8em]">Ut elit tellus, luctus nec
+            ullamcorper
             mattis,
             pulvinar dapibus leo.</p>
           <div class="mt-5">
             <div class="flex items-center gap-1">
               <span class="text-lg font-bold text-text">$</span>
 
-              <span class="text-[54px] font-bold text-text leading-[1.2em]">
+              <span class="text-[40px] md:text-[54px] font-bold text-text leading-[1.2em]">
                 99
               </span>
 
@@ -484,7 +643,7 @@
             </ul>
             <div class="mt-10">
               <a href=""
-                class="bg-primary text-accent px-6 py-3 rounded-full font-bold inline-flex hover:bg-secondary transition-all duration-300 ease-in-out">Select
+                class="bg-primary text-accent px-6 py-3 rounded-full font-bold inline-flex hover:bg-secondary transition-all duration-300 ease-in-out sm:w-auto w-full justify-center">Select
                 plan</a>
             </div>
           </div>
@@ -493,16 +652,18 @@
       </div>
     </div>
   </section>
-  <!-- - Testimonials -->
-  <section id="stats" class="pt-[30px] pb-[60px] stats">
-    <div class="xl:container mx-auto p-2.5">
-      <div class="flex flex-col gap-5">
+
+
+  <!-- - Testimonials Responsive done-->
+  <section id="stats" class="xl:py-[60px] py-10 stats">
+    <div class="xl:container mx-auto 2xl:p-2.5 px-5">
+      <div class="flex flex-col gap-5 p-2.5">
         <h4 class="text-sm text-primary font-extrabold leading-[1.5em] uppercase">▬ Testimonials ▬</h4>
-        <p class="text-[44px] text-text font-bold leading-[1.2em]">What our customers say</p>
+        <h2 class="text-[32px] md:text-[44px] text-text font-bold leading-[1.2em]">What our customers say</h2>
       </div>
-      <div class="grid grid-cols-9 gap-10  mt-[50px]">
+      <div class="grid xl:grid-cols-9 lg:grid-cols-2 grid-cols-1 gap-10 p-2.5 xl:mt-10 mt-5">
         <!-- single item start  -->
-        <div class="col-span-3 mt-5 itemStats">
+        <div class="xl:col-span-3 lg:col-span-2 col-span-1 mt-5 itemStats">
           <!-- <img src="./images/icon-contact-us-1-min.webp" alt="icon-contact-us-1-min" class="w-16"> -->
           <div class="w-[70px] h-[100px] relative mb-[50px]">
             <span
@@ -512,18 +673,22 @@
             <span
               class="image-mask mask-[url(../images/img-shape-3-min.png)] bg-3dde0a1 w-[70px] h-[50px] block !mask-contain absolute bottom-0"></span>
           </div>
-          <p class="text-lg text-text leading-[1.8em] mb-10">Lorem ipsum dolor sit amet, consectetur
+          <p class="text-base md:text-lg text-text leading-[1.8em] mb-10 xl:max-w-full max-w-[500px]">Lorem
+            ipsum dolor sit
+            amet,
+            consectetur
             adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
           <div class="">
-            <h2 class="text-4xl font-bold">
+            <h2 class="text-[40px] md:text-4xl font-bold">
               <span class="counter text-primary text-[54px] leading-[1.2em] font-bold" data-target="16522">16.522</span>
             </h2>
-            <p class="text-secondary text-lg font-bold">Satisfied Customers</p>
+            <p class="text-secondary text-base md:text-lg font-bold">Satisfied Customers</p>
           </div>
         </div>
+
         <!-- single item start  -->
-        <div class="col-span-3 px-10 py-[60px] bg-cc2395c rounded-[10px] itemStats">
-          <div class="relative w-[60px] h-[60px] ml-auto -mt-8 -mr-4">
+        <div class="lg:col-span-3 col-span-1 md:px-10 px-[30px] py-10 md:py-[60px] bg-cc2395c rounded-[10px] itemStats">
+          <div class="relative w-[60px] h-[60px] ml-auto md:-mt-8 md:-mr-4 -mt-4 -mr-2">
             <span
               class="image-mask mask-[url(../images/img-shape-5-min.png)] bg-secondary w-[60px] h-[60px] block !mask-contain"></span>
             <span
@@ -531,8 +696,9 @@
             <span
               class="image-mask mask-[url(../images/img-shape-6-min.png)] bg-primary block !mask-contain absolute top-2.5 h-8 w-8 left-0 right-0 mx-auto"></span>
           </div>
-          <div class="mt-12">
-            <p class="text-xl font-medium leading-[1.8em] text-secondary">Massa tincidunt dui ut ornare
+          <div class="md:mt-12 mt-4">
+            <p class="text-lg md:text-xl font-medium leading-[1.8em] text-secondary">Massa tincidunt dui
+              ut ornare
               lectus sit. Mus
               mauris vitae
               ultricies leo integer. Sit amet tellus cras
@@ -542,15 +708,17 @@
                 alt="collage-of-smiling-and-happy-multiethnic-people-2022-12-16-09-04-17-utc-min"
                 class="rounded-full w-[60px] h-[60px]">
               <div class="mt-5">
-                <h4 class="text-xl font-medium leading-[1.8em] text-secondary">Mark B. Opp</h4>
-                <h6 class="text-primary text-lg font-bold leading-[1.6em]">Customer</h6>
+                <h4 class="text-lg md:text-xl font-medium leading-[1.8em] text-secondary">Mark B. Opp
+                </h4>
+                <h6 class="text-primary text-base md:text-lg font-bold leading-[1.6em]">Customer</h6>
               </div>
             </div>
           </div>
         </div>
+
         <!-- single item start  -->
-        <div class="col-span-3 px-10 py-[60px] bg-cc2395c rounded-[10px] itemStats">
-          <div class="relative w-[60px] h-[60px] ml-auto -mt-8 -mr-4">
+        <div class="lg:col-span-3 col-span-1 md:px-10 px-[30px] py-10 md:py-[60px] bg-cc2395c rounded-[10px] itemStats">
+          <div class="relative w-[60px] h-[60px] ml-auto md:-mt-8 md:-mr-4 -mt-4 -mr-2">
             <span
               class="image-mask mask-[url(../images/img-shape-5-min.png)] bg-secondary w-[60px] h-[60px] block !mask-contain"></span>
             <span
@@ -558,8 +726,9 @@
             <span
               class="image-mask mask-[url(../images/img-shape-6-min.png)] bg-primary block !mask-contain absolute top-2.5 h-8 w-8 left-0 right-0 mx-auto"></span>
           </div>
-          <div class="mt-12">
-            <p class="text-xl font-medium leading-[1.8em] text-secondary">Massa tincidunt dui ut ornare
+          <div class="md:mt-12 mt-4">
+            <p class="text-lg md:text-xl font-medium leading-[1.8em] text-secondary">Massa tincidunt dui
+              ut ornare
               lectus sit. Mus
               mauris vitae
               ultricies leo integer. Sit amet tellus cras
@@ -569,8 +738,9 @@
                 alt="collage-of-smiling-and-happy-multiethnic-people-2022-12-16-09-04-17-utc-min"
                 class="rounded-full w-[60px] h-[60px]">
               <div class="mt-5">
-                <h4 class="text-xl font-medium leading-[1.8em] text-secondary">Mark B. Opp</h4>
-                <h6 class="text-primary text-lg font-bold leading-[1.6em]">Customer</h6>
+                <h4 class="text-lg md:text-xl font-medium leading-[1.8em] text-secondary">Mark B. Opp
+                </h4>
+                <h6 class="text-primary text-base md:text-lg font-bold leading-[1.6em]">Customer</h6>
               </div>
             </div>
           </div>
@@ -579,15 +749,15 @@
     </div>
 
   </section>
-  <!-- - Empower your finances CTA -->
+  <!-- - Empower your finances CTA Responsive done-->
   <section class="pb-[60px] empower">
-    <div class="xl:container mx-auto p-2.5 relative rounded-[10px]">
+    <div class="xl:container mx-auto xl:p-2.5 px-5 relative rounded-[10px]">
 
 
-      <div class="relative p-[60px]">
+      <div class="relative lg:p-[60px] md:p-10 p-2.5">
         <!-- animation image  -->
         <div
-          class="image-mask mask-[url(../images/img-shape-13-min.png)] bg-primary w-[160px] h-20 absolute left-0 right-[-24%] top-[100px] mx-auto z-10 image-shape">
+          class="image-mask mask-[url(../images/img-shape-13-min.png)] xl:mask-contain !mask-contain bg-primary w-[160px] xl:h-20 h-10 absolute xl:left-0 xl:right-[-24%] md:right-0 md:left-auto left-0 md:top-[100px] top-0 mx-auto z-10 image-shape">
         </div>
 
         <div
@@ -599,16 +769,19 @@
         </div>
         <!-- content item start  -->
         <div class="flex flex-row justify-between flex-wrap gap-5 items-end">
-          <div class="w-[684px] max-w-full p-[60px] bg-white rounded-[10px]">
-            <h2 class="text-[44px] font-bold leading-[1.2em] text-secondary mt-2 mb-4">Empower your finances
+          <div class="xl:w-[684px] lg:w-[520px] md:w-[367px] max-w-full lg:p-[60px] p-10 bg-white rounded-[10px]">
+            <h2 class="text-[32px] md:text-[37px] lg:text-[44px] font-bold leading-[1.2em] text-secondary mt-2 mb-4">
+              Empower your finances
               with our
               expert guidance</h2>
-            <p class="text-lg text-secondary mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            <p class="text-base md:text-lg text-secondary mb-4">Lorem ipsum dolor sit amet, consectetur
+              adipiscing elit.
               Ut elit
               tellus, luctus nec ullamcorper mattis,
               pulvinar dapibus leo.
             </p>
-            <p class="text-lg text-secondary">Dignissim enim sit amet venenatis urna. Nullam ac tortor vitae
+            <p class="text-base md:text-lg text-secondary">Dignissim enim sit amet venenatis urna. Nullam ac
+              tortor vitae
               purus
               faucibus ornare suspendisse. Platea
               dictumst vestibulum rhoncus est pellentesque elit ullamcorper.
@@ -621,8 +794,10 @@
               </a>
             </div>
           </div>
-          <div class="p-10 bg-primary rounded-[10px] text-white w-[285px] letYour relative z-10">
-            <h4 class="text-[22px] leading-[1.5em] font-bold ">Let your money work for you</h4>
+          <div
+            class="md:p-10 p-[30px] bg-primary rounded-[10px] text-white xl:w-[285px] lg:w-[215px] letYour relative z-10 w-full">
+            <h4 class="text-[19px] md:text-[22px] leading-[1.5em] font-bold ">Let your money work for you
+            </h4>
           </div>
         </div>
 
@@ -630,22 +805,26 @@
       </div>
     </div>
   </section>
-  <!-- - Be in control of your finances CTA -->
-  <section class="relative bg-secondary z-10 py-10 control">
+
+
+  <!-- - Be in control of your finances CTA Responsive done-->
+  <section class="relative bg-secondary z-10 py-10 control overflow-x-hidden">
     <div
       class="bg-[url(../images/img-bg-01-min.webp)] bg-top-right bg-no-repeat bg-cover opacity-50 mix-blend-overlay  absolute transition-all duration-300 top-0 left-0 right-0 bottom-0 -z-10">
 
     </div>
-    <div class="xl:container mx-auto p-2.5">
-      <div class="flex flex-row flex-wrap gap-5 items-center justify-between">
-        <div class="flex flex-row items-center gap-8 controlLeft">
+    <div class="xl:container mx-auto 2xl:p-2.5 px-5">
+      <div class="flex flex-row flex-wrap gap-5 items-center xl:justify-between justify-center">
+        <div class="flex lg:flex-row flex-col items-center lg:text-start text-center md:gap-8 gap-5 controlLeft">
           <!-- <img src="./images/icon-services-3-min.png" alt="icon-services-3-min" class="w-[70px]"> -->
-          <div class="bg-primary image-mask mask-[url(../images/icon-services-3-min.png)] w-[70px] h-[70px]">
+          <div
+            class="bg-primary image-mask mask-[url(../images/icon-services-3-min.png)] lg:w-[70px] w-[50px] lg:h-[70px] h-[50px]">
           </div>
           <div class="">
-            <h2 class="text-accent text-[28px] font-bold leading-normal">Be in control of your company's
+            <h2 class="text-accent text-[22px] md:text-[28px] font-bold leading-normal">Be in control of
+              your company's
               finances</h2>
-            <a href="tel:704-569-5378" class="text-primary text-[22px] font-bold">704-569-5378</a>
+            <a href="tel:704-569-5378" class="text-primary text-xl md:text-[22px] font-bold">704-569-5378</a>
           </div>
         </div>
         <ul class="m-0 p-0 text-accent flex flex-row gap-5 text-xl controlRight">
@@ -670,20 +849,22 @@
 
   </section>
   <!-- About Us Page -->
-  <!-- - Why you should hire CTA -->
-  <section class="relative py-[70px] bg-secondary z-0">
+  <!-- - Why you should hire CTA Responsive done-->
+  <section class="relative md:py-[70px] py-10 bg-secondary z-0">
     <!-- overlay  -->
     <div
       class="bg-[url(../images/business-consulting-2021-09-24-03-05-24-utc-min.jpg)] bg-top bg-no-repeat bg-cover opacity-90 mix-blend-luminosity brightness-100 contrast-100 saturate-0 blur-none hue-rotate-0  absolute transition-all duration-300 top-0 left-0 right-0 bottom-0 -z-10">
     </div>
-    <div class="xl:container mx-auto p-2.5">
+    <div class="xl:container mx-auto 2xl:p-2.5 px-5">
       <div class="flex  justify-end">
         <div
-          class="bg-[url(../images/img-bg-02-min.jpg)] bg-center bg-no-repeat bg-cover bg-blend-overlay bg-secondary p-[60px] m-2.5 max-w-[570px] rounded-[20px_20px_90px_20px]">
-          <h2 class="text-[44px] font-bold leading-[1.2em] text-primary mt-2 pb-4">Why should you hire
+          class="bg-[url(../images/img-bg-02-min.jpg)] bg-center bg-no-repeat bg-cover bg-blend-overlay bg-secondary xl:p-[60px] p-10 md:m-2.5 xl:max-w-[570px] max-w-[620px] rounded-[20px_20px_90px_20px]">
+          <h2 class="text-[32px] md:text-[38px] xl:text-[44px] font-bold leading-[1.2em] text-primary mt-2 pb-4">
+            Why should you hire
             Zedello's
             services?</h2>
-          <p class="text-accent text-lg">Est ante in nibh mauris cursus mattis molestie a. Consequat ac felis
+          <p class="text-accent text-base md:text-lg">Est ante in nibh mauris cursus mattis molestie a.
+            Consequat ac felis
             donec et
             odio. Consequat id porta
             nibh venenatis cras sed. </p>
@@ -696,24 +877,26 @@
       </div>
     </div>
   </section>
-  <!-- - Meet our experts Team section -->
-  <section class="py-[60px] bg-cc2395c business">
-    <div class="xl:container mx-auto p-2.5 relative">
+  <!-- - Meet our experts Team section Responsive done-->
+  <section class="py-[60px] bg-cc2395c business overflow-x-hidden">
+    <div class="xl:container mx-auto 2xl:p-2.5 px-5 relative">
       <div
-        class="image-mask mask-[url(../images/img-shape-13-min.png)] bg-primary w-[160px] h-20 absolute right-[10%] z-10 customerShape">
+        class="image-mask mask-[url(../images/img-shape-13-min.png)] 2xl:mask-cover !mask-contain bg-primary w-[160px] 2xl:h-20 h-[50px] absolute xl:right-[10%] sm:top-0 -top-2.5 sm:right-0 -right-2.5 z-10 customerShape">
       </div>
-      <div class="flex flex-col gap-5">
+      <div class="flex flex-col lg:gap-5 gap-2.5">
         <h4 class="text-sm text-primary font-extrabold leading-[1.5em] uppercase">▬ Meet our experts ▬</h4>
-        <p class="text-[44px] text-text font-bold leading-[1.2em]">Our business team</p>
+        <h2 class=" lg:text-[44px] md:text-[38px] text-[32px] text-text font-bold leading-[1.2em]">Our business
+          team</h2>
       </div>
       <!-- team member  -->
-      <div class="grid grid-cols-4 items-end mt-[50px]">
+      <div class="grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 md:gap-0 gap-[30px] items-end mt-[50px]">
         <!-- single item start  -->
         <div class="teamItem">
           <div
             class="px-5 py-[30px] text-center bg-secondary rounded-tl-[10px] text-accent hover:bg-primary transition-all duration-300">
-            <h2 class="text-[22px] font-bold leading-[1.5em] text-accent mb-1.5">Ana Kertzmann</h2>
-            <h4 class="text-lg font-bold leading-[1.6em] text-accent">Chief Executive</h4>
+            <h2 class="text-[19px] md:text-[22px] font-bold leading-[1.5em] text-accent mb-1.5">Ana
+              Kertzmann</h2>
+            <h4 class="text-base md:text-lg font-bold leading-[1.6em] text-accent">Chief Executive</h4>
             <ul class="m-0 p-0 text-accent flex flex-row gap-2.5 text-sm justify-center mt-2.5">
               <li><a href=""
                   class="transform transition hover:scale-[1.2] ease-[cubic-bezier(0.47,2.02,0.31,-0.36)] inline-flex hover:text-secondary hover:opacity-90 duration-500"><i
@@ -737,7 +920,7 @@
             <img
               src="./images/confident-beautiful-red-haired-female-business-con-2021-12-09-05-58-20-utc-min-r05rm50c3k4g04iit1l0c6sspummjxho1whboxkfao.jpg"
               alt="confident-beautiful-red-haired-female-business-con-2021-12-09-05-58-20-utc-min-r05rm50c3k4g04iit1l0c6sspummjxho1whboxkfao"
-              class=" rounded-bl-[10px] brightness-100 contrast-100 saturate-0 blur-none hue-rotate-0 w-full h-[475px] object-cover object-center">
+              class=" rounded-bl-[10px] brightness-100 contrast-100 saturate-0 blur-none hue-rotate-0 w-full 2xl:h-[475px] h-[600px] object-cover object-top">
           </div>
 
         </div>
@@ -749,11 +932,12 @@
             <img
               src="./images/happy-black-consultant-with-headset-waving-at-came-2022-12-16-08-19-05-utc-min-r05rm50c3k50gput549gvamt3p2tttgundz5pw3ec8.jpg"
               alt="confident-beautiful-red-haired-female-business-con-2021-12-09-05-58-20-utc-min-r05rm50c3k4g04iit1l0c6sspummjxho1whboxkfao"
-              class=" rounded-t-[10px] brightness-100 contrast-100 saturate-0 blur-none hue-rotate-0 w-full h-[550px] object-cover object-center">
+              class=" rounded-t-[10px] brightness-100 contrast-100 saturate-0 blur-none hue-rotate-0 w-full h-[550px] object-cover object-top">
           </div>
           <div class="px-5 py-[30px] text-center bg-primary text-accent hover:bg-secondary transition-all duration-300">
-            <h2 class="text-[22px] font-bold leading-[1.5em] text-accent mb-1.5">Ana Kertzmann</h2>
-            <h4 class="text-lg font-bold leading-[1.6em] text-accent">Chief Executive</h4>
+            <h2 class="text-[19px] md:text-[22px] font-bold leading-[1.5em] text-accent mb-1.5">Ana
+              Kertzmann</h2>
+            <h4 class="text-base md:text-lg font-bold leading-[1.6em] text-accent">Chief Executive</h4>
             <ul class="m-0 p-0 text-accent flex flex-row gap-2.5 text-sm justify-center mt-2.5">
               <li><a href=""
                   class="transform transition hover:scale-[1.2] ease-[cubic-bezier(0.47,2.02,0.31,-0.36)] inline-flex hover:text-primary hover:opacity-90 duration-500"><i
@@ -782,8 +966,9 @@
         <div class="teamItem">
 
           <div class="px-5 py-[30px] text-center bg-white text-secondarytransition-all duration-300">
-            <h2 class="text-[22px] font-bold leading-[1.5em] text-secondary mb-1.5">Ana Kertzmann</h2>
-            <h4 class="text-lg font-bold leading-[1.6em] text-secondary">Chief Executive</h4>
+            <h2 class="text-[19px] md:text-[22px] font-bold leading-[1.5em] text-secondary mb-1.5">Ana
+              Kertzmann</h2>
+            <h4 class="text-base md:text-lg font-bold leading-[1.6em] text-secondary">Chief Executive</h4>
             <ul class="m-0 p-0 text-secondary flex flex-row gap-2.5 text-sm justify-center mt-2.5">
               <li><a href=""
                   class="transform transition hover:scale-[1.2] ease-[cubic-bezier(0.47,2.02,0.31,-0.36)] inline-flex hover:text-secondary text-primary hover:opacity-90 duration-500"><i
@@ -807,7 +992,7 @@
             <img
               src="./images/portrait-of-smiling-male-customer-service-operator-2022-12-16-08-34-45-utc-min-r05rm50c3k4g04iit1l0c6sspummjxho1whboxkfao.jpg"
               alt="portrait-of-smiling-male-customer-service-operator-2022-12-16-08-34-45-utc-min-r05rm50c3k4g04iit1l0c6sspummjxho1whboxkfao"
-              class="brightness-100 contrast-100 saturate-0 blur-none hue-rotate-0 w-full h-[475px] object-cover object-center">
+              class="brightness-100 contrast-100 saturate-0 blur-none hue-rotate-0 w-full 2xl:h-[475px] h-[600px] object-cover object-top">
           </div>
 
         </div>
@@ -818,11 +1003,12 @@
             <img
               src="./images/online-consultant-2021-09-24-03-39-54-utc-min-r05rm50c3k4g04iit1l0c6sspummjxho1whboxkfao.jpg"
               alt="online-consultant-2021-09-24-03-39-54-utc-min-r05rm50c3k4g04iit1l0c6sspummjxho1whboxkfao"
-              class="rounded-tr-[10px] brightness-100 contrast-100 saturate-0 blur-none hue-rotate-0 w-full h-[475px] object-cover object-center">
+              class="rounded-tr-[10px] brightness-100 contrast-100 saturate-0 blur-none hue-rotate-0 w-full 2xl:h-[475px] h-[600px] object-cover object-top">
           </div>
           <div class="px-5 py-[30px] text-center bg-white text-secondary transition-all duration-300 rounded-br-[10px]">
-            <h2 class="text-[22px] font-bold leading-[1.5em] text-secondary mb-1.5">Ana Kertzmann</h2>
-            <h4 class="text-lg font-bold leading-[1.6em] text-secondary">Chief Executive</h4>
+            <h2 class="text-[19px] md:text-[22px] font-bold leading-[1.5em] text-secondary mb-1.5">Ana
+              Kertzmann</h2>
+            <h4 class="text-base md:text-lg font-bold leading-[1.6em] text-secondary">Chief Executive</h4>
             <ul class="m-0 p-0 text-secondary flex flex-row gap-2.5 text-sm justify-center mt-2.5">
               <li><a href=""
                   class="transform transition hover:scale-[1.2] ease-[cubic-bezier(0.47,2.02,0.31,-0.36)] inline-flex hover:text-secondary text-primary hover:opacity-90 duration-500"><i
@@ -851,27 +1037,31 @@
     </div>
   </section>
 
+
+
   <!-- Services Page -->
-  <!-- - We make your ideas and suggestions section -->
+  <!-- - We make your ideas and suggestions section Responsive done-->
   <section class="py-[60px] bg-cc2395c">
-    <div class="xl:container mx-auto p-2.5">
-      <div class="grid grid-cols-11 gap-[50px]">
-        <div class="col-span-5">
-          <img
-            src="./images/online-consultant-2021-09-24-03-39-54-utc-min-r05rm50c3k4g04iit1l0c6sspummjxho1whboxkfao.jpg"
+    <div class="xl:container mx-auto 2xl:p-2.5 px-5">
+      <div class="grid xl:grid-cols-11 grid-cols-1 xl:gap-[50px] gap-[60px]">
+        <div class="xl:col-span-5 xl:order-1 order-2">
+          <img src="./images/couple-with-business-consultants-at-the-office-2021-09-02-01-01-35-utc-min.jpg"
             alt="online-consultant-2021-09-24-03-39-54-utc-min-r05rm50c3k4g04iit1l0c6sspummjxho1whboxkfao"
-            class="rounded-[10px] brightness-100 contrast-100 saturate-0 blur-none hue-rotate-0 w-full h-[620px] object-cover object-top">
+            class="rounded-[10px] brightness-100 contrast-100 saturate-0 blur-none hue-rotate-0 w-full h-[300px] sm:h-[420px] md:h-[620px] object-cover object-top-right">
         </div>
-        <div class="col-span-6">
-          <h2 class="text-[44px] font-bold leading-[1.2em] mt-2 mb-4 text-secondary max-w-[490px]">We make
+        <div class="xl:col-span-6 xl:order-2 order-1">
+          <h2
+            class="text-[32px] md:text-[38px] lg:text-[44px] font-bold leading-[1.2em] mt-2 mb-4 text-secondary max-w-[490px]">
+            We make
             your ideas &
             suggestions
             much more realistic & feasible</h2>
-          <p class="text-lg text-secondary">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
+          <p class="md:text-lg text-base text-secondary">Lorem ipsum dolor sit amet, consectetur adipiscing
+            elit. Ut elit
             tellus,
             luctus nec ullamcorper mattis,
             pulvinar dapibus leo.</p>
-          <div class="grid grid-cols-2 gap-5 mt-10">
+          <div class="grid md:grid-cols-2 gap-5 mt-10">
             <!-- single item start  -->
             <div class="">
               <ul class="text-base font-bold capitalize flex flex-col gap-2">
@@ -898,7 +1088,7 @@
                   <img
                     src="./images/collage-of-smiling-and-happy-multiethnic-people-2022-12-16-09-04-17-utc-min-r05rm50877ypxbq00dgciiu0mo90aj9016t3yizd40.jpg"
                     alt="collage-of-smiling-and-happy-multiethnic-people-2022-12-16-09-04-17-utc-min"
-                    class="rounded-full w-20 h-20">
+                    class="rounded-full w-20 h-20 brightness-100 contrast-100 saturate-0 blur-none hue-rotate-0">
                 </div>
                 <div class="text-end py-2.5">
                   <!-- <img src="" alt=""> -->
@@ -912,9 +1102,9 @@
 
             </div>
             <div
-              class="bg-[url(../images/img-bg-02-min.jpg)] bg-center bg-no-repeat bg-cover bg-blend-overlay bg-secondary p-[30px] rounded-[10px] ml-2.5 text-center h-full flex justify-center items-center relative">
+              class="bg-[url(../images/img-bg-02-min.jpg)] bg-center bg-no-repeat bg-cover bg-blend-overlay bg-secondary p-10 md:p-[30px] rounded-[10px] sm:ml-2.5 text-center h-full flex justify-center items-center relative">
               <div
-                class="absolute bottom-0 right-0 translate-x-[30px] translate-y-[30px] w-[100px] h-[100px] bg-primary mask-[url(../images/img-shape-16-min.png)] mask-contain mask-[center_left] mask-no-repeat">
+                class="absolute bottom-0 right-0 2xl:translate-x-[30px] translate-x-3 translate-y-[30px] w-[100px] h-[100px] bg-primary mask-[url(../images/img-shape-16-min.png)] mask-contain mask-[center_left] mask-no-repeat">
               </div>
               <div class="">
                 <h2 class="text-[22px] font-bold text-accent leading-[1.5em]">How can Zedello help to
@@ -933,27 +1123,29 @@
       </div>
     </div>
   </section>
-
   <!-- Pricing Plans -->
+  <!-- - Boost your business - three image section responsive done-->
   <section class="pb-[60px] pt-[30px]">
-    <div class="xl:container mx-auto p-2.5">
-      <div class="flex flex-row flex-wrap gap-10 items-center justify-between">
+    <div class="xl:container mx-auto 2xl:p-2.5 px-5">
+      <div class="flex xl:flex-row flex-col flex-wrap gap-10 items-center justify-between">
         <!-- left item start  -->
-        <div class="max-w-[432px]">
+        <div class="xl:max-w-[432px]">
           <h4 class="text-sm text-primary font-extrabold leading-[1.5em] uppercase mb-[20px]">▬ boost your
             business ▬
           </h4>
-          <h2 class="text-[44px] font-bold leading-[1.2em] text-secondary mt-2 mb-4">Consulting services for
+          <h2 class="text-[32px] md:text-[37px] xl:text-[44px] font-bold leading-[1.2em] text-secondary mt-2 mb-4">
+            Consulting services for
             large &
             small
             businesses</h2>
-          <p class="text-lg text-secondary">Sed cras ornare arcu dui. Quis imperdiet massa tincidunt nunc
+          <p class="md:text-lg text-base text-secondary">Sed cras ornare arcu dui. Quis imperdiet massa
+            tincidunt nunc
             pulvinar.
             Lacinia
             quis vel eros donec ac odio tempor.</p>
         </div>
         <!-- right item start  -->
-        <div class="max-w-[768px] grid grid-cols-3 gap-5">
+        <div class="xl:max-w-[768px] grid md:grid-cols-3 grid-cols-1 gap-5">
           <!-- single item start  -->
           <div class=" ">
             <div class="bg-secondary rounded-[10px]">
@@ -962,7 +1154,7 @@
             </div>
 
             <div
-              class="mt-[30px] w-[100px] h-[100px] bg-primary mask-[url(../images/img-shape-22-min.png)] mask-contain mask-[center_left] mask-no-repeat ">
+              class="mt-[30px] w-[100px] h-[100px] bg-primary mask-[url(../images/img-shape-22-min.png)] mask-contain mask-[center_left] mask-no-repeat md:block hidden">
             </div>
 
           </div>
@@ -970,7 +1162,7 @@
           <!-- single item start  -->
           <div class=" ">
             <div
-              class="mb-[30px] w-[100px] h-[100px] bg-primary mask-[url(../images/img-shape-20-min.png)] mask-contain mask-[center_left] mask-no-repeat ml-auto">
+              class="mb-[30px] w-[100px] h-[100px] bg-primary mask-[url(../images/img-shape-20-min.png)] mask-contain mask-[center_left] mask-no-repeat ml-auto md:block hidden">
             </div>
             <img src="./images/presentation-in-consulting-seminar-about-business-2021-08-29-17-44-39-utc-min.jpg" alt=""
               class="w-full h-[512px] object-cover object-right rounded-[10px] mix-blend-luminosity opacity-90 brightness-100 contrast-100 saturate-0 blur-none hue-rotate-0 ">
@@ -988,12 +1180,14 @@
       </div>
     </div>
   </section>
-  <!-- - FAQs -->
+  <!-- - FAQs responsive done -->
   <section class="py-[60px] bg-cc2395c faq">
-    <div class="xl:container mx-auto p-2.5">
+    <div class="xl:container mx-auto 2xl:p-2.5 px-5">
       <div class="text-center mb-10">
-        <h2 class="text-[44px] font-bold leading-[1.2em] mt-2 mb-4">Request FAQ's</h2>
-        <p class="text-xl leading-[1.8em]">Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+        <h2 class="text-[32px] md:text-[37px] xl:text-[44px] font-bold leading-[1.2em] mt-2 mb-4">Request FAQ's
+        </h2>
+        <p class="text-base md:text-xl leading-[1.8em]">Ut elit tellus, luctus nec ullamcorper mattis, pulvinar
+          dapibus leo.
         </p>
       </div>
       <div class="faqItem">
@@ -1113,28 +1307,33 @@
   </section>
 
 
+
+
   <!-- 404 Page -->
-  <!-- - 404 page -->
+  <!-- - 404 page Responsive done -->
   <section class="min-h-screen flex justify-center items-center relative z-10 bg-secondary errorPage">
     <div
       class="bg-[url(../images/at-the-meeting-with-finance-advisor-2022-12-16-14-40-48-utc-min.jpg)] bg-top bg-no-repeat bg-cover opacity-50 mix-blend-luminosity absolute top-0 left-0 right-0 bottom-0 w-full h-full -z-10">
     </div>
     <!-- anothe shape  -->
     <div
-      class="mask-contain mask-no-repeat mask-[center_center] mask-[url(../images/img-shape-13-min.png)] bg-primary w-[200px] h-[100px] absolute left-[5%] top-[10%] mx-auto z-20">
+      class="mask-contain mask-no-repeat mask-[center_center] mask-[url(../images/img-shape-13-min.png)] bg-primary xl:w-[200px] w-[100px] h-[100px] absolute left-[5%] top-[10%] mx-auto z-20">
     </div>
     <div
-      class="mask-contain mask-no-repeat mask-[center_center] mask-[url(../images/img-shape-15-min.png)] bg-primary w-[150px] h-[150px] absolute bottom-[10%] left-[5%] mx-auto z-20">
+      class="mask-contain mask-no-repeat mask-[center_center] mask-[url(../images/img-shape-15-min.png)] bg-primary xl:w-[150px] w-[75px] h-[75px] xl:h-[150px] absolute bottom-[10%] left-[5%] mx-auto z-20">
     </div>
     <div
-      class="absolute bottom-[10%] right-[5%] w-[200px] h-[200px] bg-primary mask-[url(../images/img-shape-16-min.png)] mask-contain mask-[center_left] mask-no-repeat z-20">
+      class="absolute bottom-[10%] right-[5%] xl:w-[200px] w-[100px] h-[100px] xl:h-[200px] bg-primary mask-[url(../images/img-shape-16-min.png)] mask-contain mask-[center_left] mask-no-repeat z-20">
     </div>
     <div
       class="bg-[url(../images/img-shape-12-min.webp)] bg-top bg-no-repeat bg-cover relative z-10 w-full min-h-screen">
-      <div class="xl:container mx-auto p-2.5 flex items-center justify-center text-center min-h-screen">
+      <div class="xl:container mx-auto 2xl:p-2.5 px-5 flex items-center justify-center text-center min-h-screen">
         <div class="flex flex-col gap-5">
-          <h1 class="text-[180px] font-bold text-accent leading-[1.2em] errorTitle">404</h1>
-          <h2 class="text-[44px] font-bold text-accent leading-[1.2em] errorSubtitle">Sorry! The page not be
+          <h1 class="text-[110px] md:text-[180px] font-bold text-accent leading-[1.2em] errorTitle">404</h1>
+          <h2
+            class="text-[32px] md:text-[32px] md:text-[37px]  xl:text-[44px] font-bold text-accent leading-[1.2em] errorSubtitle">
+            Sorry!
+            The page not be
             found!</h2>
           <div class="mt-2.5 errorButton">
             <a href=""
@@ -1149,87 +1348,97 @@
   </section>
 
   <!-- Business Services -->
-  <!-- - Boost your business 20 years of experience section -->
+  <!-- - Boost your business 20 years of experience section Responsive done -->
   <section class="relative bg-secondary z-10 py-10">
     <!-- overlay  -->
     <div
       class="bg-[url(../images/img-bg-01-min.webp)] bg-center bg-no-repeat bg-cover opacity-90 mix-blend-overlay  absolute transition-all duration-300 top-0 left-0 right-0 bottom-0 -z-10">
     </div>
-    <div class="xl:container mx-auto p-2.5">
-      <div class="grid grid-cols-2 items-center">
+    <div class="xl:container mx-auto 2xl:p-2.5 px-5">
+      <div class="grid md:grid-cols-2 items-center gap-5">
         <div class="flex flex-col gap-4 mt-2">
           <h4 class="text-sm text-primary font-extrabold leading-[1.5em] uppercase">▬ boost your business ▬
           </h4>
-          <p class="text-[44px] text-accent font-bold leading-[1.2em]">20 years of experience</p>
+          <p class="text-[32px] md:text-[37px] xl:text-[44px] text-accent font-bold leading-[1.2em]">20 years
+            of experience</p>
         </div>
         <div class="">
-          <p class="text-lg text-cc2395c">Mollis nunc sed id semper risus. Sed viverra tellus in hac. In nibh
+          <p class="text-base md:text-lg text-cc2395c">Mollis nunc sed id semper risus. Sed viverra tellus in
+            hac. In nibh
             mauris cursus mattis molestie a iaculis at erat. Sapien eget mi proin sed.</p>
         </div>
       </div>
       <!-- card item start  -->
-      <div class="grid grid-cols-4 mt-[70px] gap-10">
+      <div class="grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 mt-[70px] gap-10">
         <!-- single item start  -->
-        <div class="relative pt-[60px] pb-10 px-10 bg-e843f70 rounded-[10px]">
+        <div class="relative pt-[60px] md:pb-10 pb-[30px] md:px-10 px-[30px] bg-e843f70 rounded-[10px]">
           <div class="rounded">
             <div
               class="bg-primary h-5 leading-5 rounded-xs ease-in-out transition-all duration-100 absolute left-0 top-0 bar"
               data-width="50%" style="width: 50%;"></div>
           </div>
-          <h3 class="text-[44px] font-bold text-accent leading-[1.2em]">50%</h3>
+          <h3 class="text-[32px] md:text-[37px]  xl:text-[44px] font-bold text-accent leading-[1.2em]">50%
+          </h3>
           <div class="py-2.5 flex flex-col gap-2.5">
-            <h4 class="text-[24px] font-bold text-accent leading-[1.2em]">Nurture ideas</h4>
-            <p class="text-lg text-accent leading-[1.8em]">Quis imperdiet massa tincidunt nunc pulvinar.
+            <h4 class="text-[19px] md:text-[24px] font-bold text-accent leading-[1.2em]">Nurture ideas</h4>
+            <p class="text-base md:text-lg text-accent leading-[1.8em]">Quis imperdiet massa tincidunt nunc
+              pulvinar.
             </p>
           </div>
         </div>
         <!-- single item end -->
 
         <!-- single item start  -->
-        <div class="relative pt-[60px] pb-10 px-10 bg-e843f70 rounded-[10px]">
+        <div class="relative pt-[60px] md:pb-10 pb-[30px] md:px-10 px-[30px] bg-e843f70 rounded-[10px]">
           <div class="rounded">
             <div
               class="bg-primary h-5 leading-5 rounded-xs ease-in-out transition-all duration-100 absolute left-0 top-0 bar"
               data-width="50%" style="width: 50%;"></div>
           </div>
 
-          <h3 class="text-[44px] font-bold text-accent leading-[1.2em]">24%</h3>
+          <h3 class="text-[32px] md:text-[37px]  xl:text-[44px] font-bold text-accent leading-[1.2em]">24%
+          </h3>
           <div class="py-2.5 flex flex-col gap-2.5">
-            <h4 class="text-[24px] font-bold text-accent leading-[1.2em]">Plan smart</h4>
-            <p class="text-lg text-accent leading-[1.8em]">Quis imperdiet massa tincidunt nunc pulvinar.
+            <h4 class="text-[19px] md:text-[24px] font-bold text-accent leading-[1.2em]">Plan smart</h4>
+            <p class="text-base md:text-lg text-accent leading-[1.8em]">Quis imperdiet massa tincidunt nunc
+              pulvinar.
             </p>
           </div>
         </div>
         <!-- single item end -->
         <!-- single item start  -->
-        <div class="relative pt-[60px] pb-10 px-10 bg-e843f70 rounded-[10px]">
+        <div class="relative pt-[60px] md:pb-10 pb-[30px] md:px-10 px-[30px] bg-e843f70 rounded-[10px]">
           <div class="rounded">
             <div
               class="bg-primary h-5 leading-5 rounded-xs ease-in-out transition-all duration-100 absolute left-0 top-0 bar"
               data-width="75%" style="width: 75%;"></div>
           </div>
 
-          <h3 class="text-[44px] font-bold text-accent leading-[1.2em]">75%</h3>
+          <h3 class="text-[32px] md:text-[37px]  xl:text-[44px] font-bold text-accent leading-[1.2em]">75%
+          </h3>
           <div class="py-2.5 flex flex-col gap-2.5">
-            <h4 class="text-[24px] font-bold text-accent leading-[1.2em]">Future plans</h4>
-            <p class="text-lg text-accent leading-[1.8em]">Quis imperdiet massa tincidunt nunc pulvinar.
+            <h4 class="text-[19px] md:text-[24px] font-bold text-accent leading-[1.2em]">Future plans</h4>
+            <p class="text-base md:text-lg text-accent leading-[1.8em]">Quis imperdiet massa tincidunt nunc
+              pulvinar.
             </p>
           </div>
         </div>
         <!-- single item end -->
 
         <!-- single item start  -->
-        <div class="relative pt-[60px] pb-10 px-10 bg-e843f70 rounded-[10px]">
+        <div class="relative pt-[60px] md:pb-10 pb-[30px] md:px-10 px-[30px] bg-e843f70 rounded-[10px]">
           <div class="rounded">
             <div
               class="bg-primary h-5 leading-5 rounded-xs ease-in-out transition-all duration-100 absolute left-0 top-0 bar"
               data-width="90%" style="width: 90%;"></div>
           </div>
 
-          <h3 class="text-[44px] font-bold text-accent leading-[1.2em]">90%</h3>
+          <h3 class="text-[32px] md:text-[37px]  xl:text-[44px] font-bold text-accent leading-[1.2em]">90%
+          </h3>
           <div class="py-2.5 flex flex-col gap-2.5">
-            <h4 class="text-[24px] font-bold text-accent leading-[1.2em]">Enjoy success</h4>
-            <p class="text-lg text-accent leading-[1.8em]">Quis imperdiet massa tincidunt nunc pulvinar.
+            <h4 class="text-[19px] md:text-[24px] font-bold text-accent leading-[1.2em]">Enjoy success</h4>
+            <p class="text-base md:text-lg text-accent leading-[1.8em]">Quis imperdiet massa tincidunt nunc
+              pulvinar.
             </p>
           </div>
         </div>
@@ -1239,20 +1448,23 @@
       </div>
     </div>
   </section>
-  <!-- - We take your business to the next level section - image left and image right with text opposite -->
+  <!-- - We take your business to the next level section - image left and image right with text opposite Responsive done-->
   <section class="relative flex flex-row">
-    <div class="grid grid-cols-2 items-center w-[90.4%]">
+    <div class="grid md:grid-cols-2 grid-cols-1 items-center xl:w-[90.4%]">
       <!-- left item start  -->
-      <div class="relative p-[100px]">
+      <div class="relative xl:p-[100px] md:px-10 px-5 py-[60px]">
         <div class="mb-5">
           <img src="./images/icon-2.png" alt="icon" class="w-[70px]">
         </div>
-        <h2 class="text-[44px] font-bold text-secondary leading-[1.2em] mb-4 mt-2">We take your business to the
+        <h2 class="text-[32px] md:text-[37px] lg:text-[44px] font-bold text-secondary leading-[1.2em] mb-4 mt-2">
+          We take your business to the
           next level </h2>
-        <p class="text-lg text-secondary mb-4">Montes nascetur ridiculus mus mauris vitae ultricies. Interdum
+        <p class="text-base md:text-lg text-secondary mb-4">Montes nascetur ridiculus mus mauris vitae
+          ultricies. Interdum
           consectetur libero id faucibus nisl
           tincidunt eget.</p>
-        <p class="text-lg text-secondary leading-[1.8em]">Cras adipiscing enim eu turpis egestas pretium aenean
+        <p class="text-base md:text-lg text-secondary leading-[1.8em]">Cras adipiscing enim eu turpis egestas
+          pretium aenean
           pharetra magna. Enim nunc faucibus a
           pellentesque sit amet porttitor eget.</p>
       </div>
@@ -1264,86 +1476,108 @@
       </div>
       <!-- right item end -->
     </div>
-    <div class="w-[9.666%] relative">
+    <div class="w-[9.666%] relative xl:block hidden">
       <div class="bg-transparent bg-[linear-gradient(180deg,#fc653c_20%,#f5f5f5_0%)] h-full">
       </div>
       <div class="bg-primary w-[50px] h-[50px] absolute left-0 bottom-0"></div>
     </div>
   </section>
   <section class="relative flex flex-row">
-    <div class="grid grid-cols-2 items-center w-[90.4%] bg-cc2395c">
+    <div class="grid md:grid-cols-2 grid-cols-1 items-center xl:w-[90.4%] bg-cc2395c">
       <!-- left item start  -->
-      <div class="relative">
+      <div class="relative md:order-1 order-2">
         <img src="./images/business-coworkers-consulting-in-office-2021-08-28-20-34-26-utc-min.jpg" alt=""
           class="w-full min-h-[620px] object-cover object-center brightness-100 contrast-100 saturate-0 blur-none hue-rotate-0">
       </div>
       <!-- left item end -->
       <!-- right item start  -->
-      <div class="relative p-[100px]">
+      <div class="relative xl:p-[100px] md:px-10 px-5 py-[60px]  md:order-2 order-1">
         <div class="mb-5">
           <img src="./images/icon-1.png" alt="icon" class="w-[70px]">
         </div>
-        <h2 class="text-[44px] font-bold text-secondary leading-[1.2em] mb-4 mt-2">We take your business to the
+        <h2 class="text-[32px] md:text-[37px] lg:text-[44px] font-bold text-secondary leading-[1.2em] mb-4 mt-2">
+          We take your business to the
           next level </h2>
-        <p class="text-lg text-secondary mb-4">Montes nascetur ridiculus mus mauris vitae ultricies. Interdum
+        <p class="text-base md:text-lg text-secondary mb-4">Montes nascetur ridiculus mus mauris vitae
+          ultricies. Interdum
           consectetur libero id faucibus nisl
           tincidunt eget.</p>
-        <p class="text-lg text-secondary leading-[1.8em]">Cras adipiscing enim eu turpis egestas pretium aenean
+        <p class="text-base md:text-lg text-secondary leading-[1.8em]">Cras adipiscing enim eu turpis egestas
+          pretium aenean
           pharetra magna. Enim nunc faucibus a
           pellentesque sit amet porttitor eget.</p>
       </div>
       <!-- right item end -->
 
     </div>
-    <div class="w-[9.666%] relative mt-[90px]">
+    <div class="w-[9.666%] relative mt-[90px] xl:block hidden">
       <div class="bg-transparent bg-[linear-gradient(180deg,#1c1e27_80%,#ffffff_0%)] h-full">
       </div>
       <div class="bg-primary w-[50px] h-[50px] absolute left-0 bottom-0"></div>
     </div>
   </section>
 
+
+
+
+
+
+
+
   <!-- Investment Management -->
-  <!-- - Get access to a personalized section with piggy bank image -->
+  <!-- - Get access to a personalized section with piggy bank image  Responsive done-->
   <section class="relative py-[60px] getAccess">
-    <div class="absolute left-[-10%] top-[11%] z-20">
-      <img src="./images/img-section-04-min.webp" alt=""
-        class="w-[824px] brightness-100 contrast-100 saturate-0 blur-none hue-rotate-0 ">
-    </div>
-    <div class="xl:container mx-auto p-2.5">
-      <div class="grid grid-cols-12 items-center">
+
+    <div class="xl:container mx-auto 2xl:p-2.5 px-5">
+      <div class="grid xl:grid-cols-12 md:grid-cols-11 grid-cols-1 items-center">
         <!-- shape start  -->
         <div
-          class="bg-transparent bg-[linear-gradient(180deg,#fc653c_55%,#1c1e27_0%)] h-full relative z-10 col-span-2 rounded-[10px]">
+          class="bg-transparent bg-[linear-gradient(180deg,#fc653c_55%,#1c1e27_0%)] h-full relative z-10 xl:col-span-2 md:col-span-3 col-span-1 rounded-[10px] xl:min-h-auto md:min-h-[715px] w-full md:px-0 p-5">
           <div
             class="bg-[url(../images/img-bg-01-min.webp)] bg-no-repeat bg-right bg-cover w-full h-full opacity-45 absolute left-0 top-0 -z-10 mix-blend-overlay">
           </div>
+          <div class="md:absolute left-0 md:m-[0_-7em_-5em_-30em] z-20">
+            <img src="./images/img-section-04-min.webp" alt=""
+              class="w-[824px] brightness-100 contrast-100 saturate-0 blur-none hue-rotate-0 ">
+          </div>
         </div>
         <!-- content area  -->
-        <div class="col-span-6 m-10 p-2.5 relative z-20">
-          <h2 class="text-[44px] font-bold leading-[1.2em] mt-2 mb-4 text-secondary">Get access
-            to a personalized, exclusive, & diversified investment portfolio</h2>
-          <p class="text-lg text-secondary">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-            tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
-          <div class="flex mt-[30px]">
-            <a href=""
-              class="bg-primary rounded-full text-accent text-base font-bold leading-[1.6em] flex   text-center py-3 px-6 capitalize transition-all duration-300 border-2 border-primary hover:border-accent hover:bg-secondary">Read
-              more</a>
+        <div
+          class="xl:col-span-6 md:col-span-8 col-span-1 md:m-10 md:p-2.5 relative z-20 h-full flex justify-center items-center">
+
+          <div class="relative md:mt-0 mt-[60px]">
+            <h2 class="text-[32px] md:text-[37px] lg:text-[44px] font-bold leading-[1.2em] mt-2 mb-4 text-secondary">
+              Get access
+              to a personalized, exclusive, & diversified investment portfolio</h2>
+            <p class="text-base md:text-lg text-secondary">Lorem ipsum dolor sit amet, consectetur
+              adipiscing elit. Ut
+              elit
+              tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+            <div class="flex mt-[30px]">
+              <a href=""
+                class="bg-primary rounded-full text-accent text-base font-bold leading-[1.6em] flex   text-center py-3 px-6 capitalize transition-all duration-300 border-2 border-primary hover:border-accent hover:bg-secondary">Read
+                more</a>
+            </div>
+            <div
+              class="mask-[url(../images/img-shape-21-min.png)] mask-contain mask-center mask-no-repeat bg-secondary w-[100px] h-[100px] ml-auto mt-2.5 absolute -right-2.5 md:-right-8 md:-bottom-8 bottom-0 getAccessShape1">
+            </div>
           </div>
           <div
-            class="mask-[url(../images/img-shape-21-min.png)] mask-contain mask-center mask-no-repeat bg-secondary w-[100px] h-[100px] ml-auto mt-2.5 absolute -right-8 -bottom-8 getAccessShape1">
+            class="absolute xl:top-[11%] md:top-0 top-[-46px] xl:right-[-26%] right-5 w-[100px] h-[100px] bg-secondary mask-[url(../images/img-shape-16-min.png)] mask-contain mask-[center_left] mask-no-repeat z-10 getAccessShape2">
           </div>
+
         </div>
-        <div class="col-span-4 flex flex-col gap-[30px] p-10 bg-cc2395c rounded-[10px] h-full relative z-">
-          <div
-            class="absolute top-[60px] left-0 w-[100px] h-[100px] bg-secondary mask-[url(../images/img-shape-16-min.png)] mask-contain mask-[center_left] mask-no-repeat z-10 getAccessShape2">
-          </div>
+        <div
+          class="xl:col-span-4 md:col-span-11 col-span-1 flex flex-col gap-[30px] md:p-10 p-5 bg-cc2395c rounded-[10px] xl:h-full relative xl:mt-0 md:mt-28 mt-20">
+
           <!-- shape  -->
           <div
-            class="image-mask mask-[url(../images/img-shape-15-min.png)] bg-secondary w-[100px] h-[100px] absolute bottom-0 right-0 mx-auto z-10 getAccessShape3">
+            class="image-mask mask-[url(../images/img-shape-15-min.png)] bg-secondary md:w-[100px] md:h-[100px] w-[50px] h-[50px] absolute bottom-0 right-0 mx-auto z-10 getAccessShape3">
           </div>
           <!-- single item start  -->
-          <div class="bg-primary pl-10 pr-[30px] py-[30px] border-primary border-l-10 rounded-[10px] relative z-20">
-            <h4 class="text-[22px] font-bold text-accent leading-[1.6em] mb-2.5">Pre-negotiation</h4>
+          <div class="bg-primary pl-10 pr-[30px] py-[30px] border-primary border-l-10 rounded-[10px] relative z-50">
+            <h4 class="text-[19px] md:text-[22px] font-bold text-accent leading-[1.6em] mb-2.5">
+              Pre-negotiation</h4>
             <p class="text-base text-accent font-medium">Ut elit tellus, luctus nec ullamcorper mattis,
               pulvinar dapibus leo.</p>
           </div>
@@ -1352,14 +1586,16 @@
           <!-- single item start  -->
           <div
             class="bg-secondary pr-10 pl-[30px] py-[30px] border-r-10 border-primary rounded-[10px] hover:translate-x-[-30px] transition-all duration-300 ease-in-out">
-            <h4 class="text-[22px] font-bold text-accent leading-[1.6em] mb-2.5">Due diligence plan</h4>
+            <h4 class="text-[19px] md:text-[22px] font-bold text-accent leading-[1.6em] mb-2.5">Due
+              diligence plan</h4>
             <p class="text-base text-accent font-medium">Ut elit tellus, luctus nec ullamcorper mattis,
               pulvinar dapibus leo.</p>
           </div>
           <!-- single item end  -->
           <!-- single item start  -->
           <div class="bg-primary pl-10 pr-[30px] py-[30px] border-primary border-l-10 rounded-[10px]">
-            <h4 class="text-[22px] font-bold text-accent leading-[1.6em] mb-2.5">Post-trade</h4>
+            <h4 class="text-[19px] md:text-[22px] font-bold text-accent leading-[1.6em] mb-2.5">Post-trade
+            </h4>
             <p class="text-base text-accent font-medium">Ut elit tellus, luctus nec ullamcorper mattis,
               pulvinar dapibus leo.</p>
           </div>
@@ -1372,32 +1608,41 @@
   </section>
 
   <!-- Market Research -->
-  <!-- - Boost your business Get richer data from your audience section -->
+  <!-- - Boost your business Get richer data from your audience section Responsive done-->
   <section class="py-[60px]">
-    <div class="xl:container mx-auto p-2.5">
-      <div class="grid grid-cols-2 gap-[60px] items-end">
-        <div class="grid grid-cols-2 gap-5 items-end">
-          <div class="">
-            <img src="./images/presentation-in-consulting-seminar-about-business-2021-08-29-17-44-39-utc-min.jpg" alt=""
-              class="w-full h-[750px] object-cover object-right rounded-[10px] mix-blend-luminosity opacity-90 brightness-100 contrast-100 saturate-0 blur-none hue-rotate-0 ">
-          </div>
-          <div class="relative">
-            <img
-              src="./images/graphic-of-investment-stock-market-data-analysis-b-2022-12-16-00-48-57-utc-min-r05rm50avpcv30d7w8qj0rpg9a3at08q2c4wkyvntw.jpg"
-              alt=""
-              class="w-full h-[650px] object-cover object-right rounded-[10px] mix-blend-luminosity opacity-90 brightness-100 contrast-100 saturate-0 blur-none hue-rotate-0 ">
-            <div
-              class="mask-contain mask-no-repeat mask-[center_center] mask-[url(../images/img-shape-15-min.png)] bg-primary w-[100px] h-[100px] absolute top-[-50px] left-0 mx-auto z-20">
+    <div class="xl:container mx-auto 2xl:p-2.5 px-5">
+      <div class="grid lg:grid-cols-2 xl:gap-[60px] gap-10 items-end">
+        <div class="order-2 lg:order-1 sm:mt-0 mt-20">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 items-end ">
+            <div class="order-2 lg:order-1">
+              <img src="./images/presentation-in-consulting-seminar-about-business-2021-08-29-17-44-39-utc-min.jpg"
+                alt=""
+                class="w-full h-[370px] sm:h-[750px] object-cover object-right rounded-[10px] mix-blend-luminosity opacity-90 brightness-100 contrast-100 saturate-0 blur-none hue-rotate-0 ">
+            </div>
+            <div class="relative order-1 lg:order-2">
+              <div class="bg-white">
+                <img
+                  src="./images/graphic-of-investment-stock-market-data-analysis-b-2022-12-16-00-48-57-utc-min-r05rm50avpcv30d7w8qj0rpg9a3at08q2c4wkyvntw.jpg"
+                  alt=""
+                  class="w-full h-[370px] sm:h-[650px] object-cover object-right rounded-[10px] brightness-100 contrast-100 saturate-0 blur-none hue-rotate-0 relative z-20">
+              </div>
+              <div
+                class="mask-contain mask-no-repeat mask-[center_center] mask-[url(../images/img-shape-15-min.png)] bg-primary w-[100px] h-[100px] absolute top-[-50px] -left-5 mx-auto z-10">
+              </div>
             </div>
           </div>
         </div>
-        <div class="p-2.5 relative">
+
+        <div class="p-2.5 relative order-1 lg:order-2">
           <h4 class="text-sm text-primary font-extrabold leading-[1.5em] uppercase">▬ boost your business ▬
           </h4>
-          <h2 class="text-[44px] font-bold leading-[1.2em] mt-[30px] mb-4 text-secondary max-w-[535px]">Get
+          <h2
+            class="text-[32px] md:text-[37px] lg:text-[44px] font-bold leading-[1.2em] mt-[30px] mb-4 text-secondary max-w-[535px]">
+            Get
             richer
             data from your audience with user monitoring</h2>
-          <p class="text-lg text-secondary">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
+          <p class="text-base md:text-lg text-secondary">Lorem ipsum dolor sit amet, consectetur adipiscing
+            elit. Ut elit
             tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
           <ul class="text-base font-bold capitalize flex flex-col gap-2 mt-[30px]">
             <li class="flex flex-row gap-2.5 items-center group">
@@ -1424,7 +1669,7 @@
               more</a>
           </div>
           <div
-            class="mask-[url(../images/img-shape-21-min.png)] mask-contain mask-center mask-no-repeat bg-secondary w-[100px] h-[100px] ml-auto mt-2.5">
+            class="mask-[url(../images/img-shape-21-min.png)] mask-contain mask-center mask-no-repeat bg-secondary w-[100px] h-[100px] ml-auto mt-2.5 lg:static absolute right-0 bottom-0">
           </div>
         </div>
 
@@ -1434,17 +1679,19 @@
   </section>
 
   <!-- Procurement Consulting -->
-  <!-- - Mergers & Acquisitions section -->
-  <section class="bg-cc2395c pt-[60px] mergers">
-    <div class="xl:container mx-auto p-2.5 relative min-h-[620px] flex items-center">
+  <!-- - Mergers & Acquisitions section Responsive done-->
+  <section class="bg-cc2395c pt-[60px] mergers overflow-x-hidden">
+    <div class="xl:container mx-auto 2xl:p-2.5 px-5 relative min-h-[620px] flex xl:flex-row flex-col items-center">
 
       <!-- single item start  -->
-      <div class="max-w-[530px]">
+      <div class="xl:max-w-[530px]">
         <h4 class="text-sm text-primary font-extrabold leading-[1.5em] uppercase">▬ Mergers & Acquisitions ▬
         </h4>
-        <h2 class="text-[44px] font-bold text-secondary leading-[1.2em] mb-4 mt-2">We analyze and determine
+        <h2 class="text-[32px] md:text-[37px] lg:text-[44px] font-bold text-secondary leading-[1.2em] mb-4 mt-2">
+          We analyze and determine
           the transaction value that maximizes the result</h2>
-        <p class="text-lg text-secondary leading-[1.8em]">Aliquet risus feugiat in ante metus dictum at
+        <p class="text-base md:text-lg text-secondary leading-[1.8em]">Aliquet risus feugiat in ante metus
+          dictum at
           tempor commodo. Enim sed faucibus turpis in eu. Quis enim lobortis scelerisque fermentum dui
           faucibus in ornare quam.</p>
         <div class="flex mt-[30px]">
@@ -1455,17 +1702,17 @@
       </div>
       <!-- single item end -->
       <!-- image item  -->
-      <div class="absolute bottom-0 right-0 max-w-[700px] ">
+      <div class="xl:absolute relative bottom-0 right-0 md:max-w-[700px] md:mt-0 mt-10 ">
         <div
-          class="mask-contain mask-no-repeat mask-[url(../images/img-shape-13-min.png)] bg-secondary w-[150px] h-[50px] absolute left-0 right-[15%] mx-auto z-10 mergersShape3">
+          class="mask-contain mask-no-repeat mask-[url(../images/img-shape-13-min.png)] bg-secondary w-[100px] md:w-[150px] md:h-[50px] h-10 absolute left-0 right-[15%] mx-auto z-10 mergersShape3">
         </div>
         <div
-          class="absolute top-[10%] right-2.5 translate-x-[30px] translate-y-[30px] w-[150px] h-[150px] bg-secondary mask-[url(../images/img-shape-16-min.png)] mask-contain mask-[center_left] mask-no-repeat z-10 mergersShape2">
+          class="absolute top-[10%] right-2.5 xl:translate-x-[30px] translate-y-[30px] w-20 h-20 md:w-[150px] md:h-[150px] bg-secondary mask-[url(../images/img-shape-16-min.png)] mask-contain mask-[center_left] mask-no-repeat z-10 mergersShape2">
         </div>
         <img src="./images/circle.svg" alt="circle"
-          class="absolute bottom-[20%] left-0 right-[-190px] mx-auto z-0 w-[400px] mergersShape1">
+          class="absolute bottom-[20%] md:left-0 md:right-[-190px] right-0 mx-auto z-0 md:w-[400px] w-[200px] mergersShape1">
         <img src="./images/img-person-2-min.webp" alt="img-person-2-min"
-          class="max-w-[700px] relative z-20 brightness-100 contrast-100 saturate-0 blur-none hue-rotate-0">
+          class="xl:max-w-[700px] relative z-20 brightness-100 contrast-100 saturate-0 blur-none hue-rotate-0">
       </div>
 
 
@@ -1473,19 +1720,21 @@
   </section>
 
   <!-- Strategic Consulting -->
-  <!-- - Improve Your Results three image section -->
+  <!-- - Improve Your Results three image section Responsive done--->
   <section class="py-[60px] pb-[90px] bg-cc2395c itemWrapp2">
     <div class="bg-[url(../images/img-bg-02-min.jpg)] bg-center bg-no-repeat bg-cover opacity-10 h-full relative ">
     </div>
-    <div class="xl:container mx-auto p-2.5">
+    <div class="xl:container mx-auto 2xl:p-2.5 px-5">
       <div class="flex flex-col gap-5 justify-center text-center">
         <h4 class="text-sm text-primary font-extrabold leading-[1.5em] uppercase">▬ Improve your results ▬</h4>
-        <h2 class="text-[44px] text-text font-bold leading-[1.2em] max-w-[1000px] mx-auto">Are you experiencing
+        <h2
+          class="text-[32px] md:text-[37px] lg:text-[44px] text-text font-bold leading-[1.2em] max-w-[1000px] mx-auto">
+          Are you experiencing
           complex, high-risk, or very high-risk issues?</h2>
       </div>
-      <div class="grid grid-cols-3 gap-[30px] text-center mt-[120px]">
+      <div class="grid md:grid-cols-3 grid-cols-1 gap-[30px] text-center mt-[120px]">
         <!-- single item start  -->
-        <div class="relative p-10 bg-accent rounded-[10px] item2">
+        <div class="md:mt-0 mt-10 relative p-[30px] xl:p-10 bg-accent rounded-[10px] item2">
           <div class="mt-[-120px]">
             <img
               src="./images/businesswoman-signing-documents-and-consultant-gre-2021-08-30-09-29-41-utc-min-r05rm50dbevqoxzojt39e1z4zhxunwr0qq2tsezp8o.jpg"
@@ -1493,8 +1742,10 @@
               class="w-full min-h-[320px] object-cover object-center brightness-100 contrast-100 saturate-0 blur-none hue-rotate-0 rounded-[10px]">
           </div>
           <div class="mt-[30px]">
-            <h4 class="mb-2.5 text-[22px] font-bold leading-[1.5em] text-primary">Research goal</h4>
-            <p class="text-secondary text-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+            <h4 class="mb-2.5 text-[19px] xl:text-[22px] font-bold leading-[1.5em] text-primary">Research
+              goal</h4>
+            <p class="text-secondary text-base xl:text-lg">Lorem ipsum dolor sit amet, consectetur
+              adipiscing elit. Ut
               elit tellus, luctus nec
               ullamcorper mattis, pulvinar dapibus leo.</p>
           </div>
@@ -1502,7 +1753,7 @@
         <!-- single item send -->
 
         <!-- single item start  -->
-        <div class="relative p-10 bg-accent rounded-[10px] item2">
+        <div class="md:mt-0 mt-[100px] relative p-[30px] xl:p-10 bg-accent rounded-[10px] item2">
           <div class="mt-[-120px]">
             <img
               src="./images/group-of-young-intercultural-financiers-in-formalw-2021-09-24-03-43-11-utc-min-r05rm50dbevqoxzojt39e1z4zhxunwr0qq2tsezp8o.jpg"
@@ -1510,15 +1761,17 @@
               class="w-full min-h-[320px] object-cover object-center brightness-100 contrast-100 saturate-0 blur-none hue-rotate-0 rounded-[10px]">
           </div>
           <div class="mt-[30px]">
-            <h4 class="mb-2.5 text-[22px] font-bold leading-[1.5em] text-primary">Target audience</h4>
-            <p class="text-secondary text-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+            <h4 class="mb-2.5 text-[19px] xl:text-[22px] font-bold leading-[1.5em] text-primary">Target
+              audience</h4>
+            <p class="text-secondary text-base xl:text-lg">Lorem ipsum dolor sit amet, consectetur
+              adipiscing elit. Ut
               elit tellus, luctus nec
               ullamcorper mattis, pulvinar dapibus leo.</p>
           </div>
         </div>
         <!-- single item send -->
         <!-- single item start  -->
-        <div class="relative p-10 bg-accent rounded-[10px] item2">
+        <div class="md:mt-0 mt-[100px] relative p-[30px] xl:p-10 bg-accent rounded-[10px] item2">
           <div class="mt-[-120px]">
             <img
               src="./images/business-consulting-2021-09-24-03-34-19-utc-min-r05rm50dbevqoxzojt39e1z4zhxunwr0qq2tsezp8o.jpg"
@@ -1526,8 +1779,10 @@
               class="w-full min-h-[320px] object-cover object-center brightness-100 contrast-100 saturate-0 blur-none hue-rotate-0 rounded-[10px]">
           </div>
           <div class="mt-[30px]">
-            <h4 class="mb-2.5 text-[22px] font-bold leading-[1.5em] text-primary">Sampling</h4>
-            <p class="text-secondary text-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+            <h4 class="mb-2.5 text-[19px] xl:text-[22px] font-bold leading-[1.5em] text-primary">Sampling
+            </h4>
+            <p class="text-secondary text-base xl:text-lg">Lorem ipsum dolor sit amet, consectetur
+              adipiscing elit. Ut
               elit tellus, luctus nec
               ullamcorper mattis, pulvinar dapibus leo.</p>
           </div>
@@ -1538,122 +1793,133 @@
     </div>
   </section>
 
-  <!-- footer  -->
+
+
+  <!-- footer  Responsive don-->
 
   <footer
-    class="bg-[url(../images/img-bg-02-min.jpg)] bg-bottom-right bg-no-repeat bg-cover bg-blend-overlay bg-secondary   h-full flex justify-center items-center relative py-[60px] pb-[90px]">
-    <div class="xl:container mx-auto p-2.5 relative z-20">
-      <div
-        class="mask-contain mask-no-repeat mask-[center_center] mask-[url(../images/img-shape-13-min.png)] bg-primary w-[100px] h-[50px] absolute bottom-0 left-[8%] mx-auto z-10">
-      </div>
-
-      <div
-        class="mask-contain mask-no-repeat mask-[center_center] mask-[url(../images/img-shape-15-min.png)] bg-primary w-[30px] h-[30px] absolute bottom-[-10%] left-0 right-[25%] mx-auto z-10">
-      </div>
-
-      <div
-        class="absolute bottom-[-40px] right-[28%] w-[100px] h-[100px] bg-primary mask-[url(../images/img-shape-16-min.png)] mask-contain mask-[center_left] mask-no-repeat z-10">
-      </div>
-      <!-- footer items  -->
-      <div class="grid grid-cols-9 gap-5 items-center">
-        <div class="col-span-2 flex flex-col gap-5">
-          <h4 class="text-lg text-primary font-bold leading-[1.6em] capitalize">Contact</h4>
-          <p class="text-base font-medium leading-[1.8em] text-cc2395c">2379 Concord Street <br>
-            Charlotte, NC 28212</p>
-          <ul>
-            <li><a href="mailto:email@yourdomain.com"
-                class="text-base font-medium leading-[1.8em] text-cc2395c hover:text-primary transition-all duration-300 ">email@yourdomain.com</a>
-            </li>
-            <li><a href="tel:+1234567890"
-                class="text-base font-medium leading-[1.8em] text-cc2395c hover:text-primary transition-all duration-300 ">+1234567890</a>
-            </li>
-          </ul>
+    class="bg-[url(../images/img-bg-02-min.jpg)] bg-bottom-right bg-no-repeat bg-cover bg-blend-overlay bg-secondary   relative">
+    <div class="py-[60px] pb-[90px]">
+      <div class="xl:container mx-auto 2xl:p-2.5 px-5 relative z-20">
+        <div
+          class="mask-contain mask-no-repeat mask-[center_center] mask-[url(../images/img-shape-13-min.png)] bg-primary w-[100px] h-[50px] absolute xl:bottom-0 md:bottom-[55%] bottom-[65%] md:left-[30%] right-2.5 xl:left-[8%] mx-auto z-10">
         </div>
-        <div class="col-span-2 flex flex-col gap-5">
-          <h4 class="text-lg text-primary font-bold leading-[1.6em] capitalize">Links</h4>
-          <ul class="flex flex-col gap-3">
-            <li><a href=""
-                class="text-base hover:text-primary transition-all duration-300 text-cc2395c font-bold leading-[1.6em] ">
-                About Us
-              </a>
-            </li>
 
-            <li><a href=""
-                class="text-base hover:text-primary transition-all duration-300 text-cc2395c font-bold leading-[1.6em] ">
-                Our services
-              </a>
-            </li>
-            <li><a href=""
-                class="text-base hover:text-primary transition-all duration-300 text-cc2395c font-bold leading-[1.6em] ">
-                Pricing plans
-              </a>
-            </li>
-            <li><a href=""
-                class="text-base hover:text-primary transition-all duration-300 text-cc2395c font-bold leading-[1.6em] ">
-                Testimonials
-              </a>
-            </li>
-
-          </ul>
+        <div
+          class="mask-contain mask-no-repeat mask-[center_center] mask-[url(../images/img-shape-15-min.png)] bg-primary w-[30px] h-[30px] absolute xl:bottom-[-10%] bottom-[46%] md:left-0 right-2.5 md:right-[-30%] righ xl:right-[25%] mx-auto xl:z-10 -z-10">
         </div>
-        <div class="col-span-2 flex flex-col gap-5">
-          <h4 class="text-lg text-primary font-bold leading-[1.6em] capitalize">Services</h4>
-          <ul class="flex flex-col gap-3">
-            <li><a href=""
-                class="text-base hover:text-primary transition-all duration-300 text-cc2395c font-bold leading-[1.6em] ">
-                Business consulting
-              </a>
-            </li>
 
-            <li><a href=""
-                class="text-base hover:text-primary transition-all duration-300 text-cc2395c font-bold leading-[1.6em] ">
-                Market research
-              </a>
-            </li>
-            <li><a href=""
-                class="text-base hover:text-primary transition-all duration-300 text-cc2395c font-bold leading-[1.6em] ">
-                Strategic consulting
-              </a>
-            </li>
-            <li><a href=""
-                class="text-base hover:text-primary transition-all duration-300 text-cc2395c font-bold leading-[1.6em] ">
-                Finance management
-              </a>
-            </li>
-
-          </ul>
+        <div
+          class="absolute bottom-[-40px] xl:left-auto left-0 xl:right-[28%] w-[100px] h-[100px] bg-primary mask-[url(../images/img-shape-16-min.png)] mask-contain mask-[center_left] mask-no-repeat z-10">
         </div>
-        <div class="col-span-3">
-          <div class="m-2.5 px-10 py-[30px] bg-e843f70 rounded-[10px]">
-            <h4 class="text-lg text-primary font-bold leading-[1.6em] capitalize mb-5">Newsletter</h4>
-            <input type="email" name="email" id="email"
-              class="rounded-[20px] border-2 border-cc2395c text-cc2395c py-2 px-4 w-full h-12" placeholder="Email">
-            <!-- check box -->
-            <div class="flex gap-3 mt-2.5">
-              <div class="flex h-6 shrink-0 items-center">
-                <div class="group grid size-4 grid-cols-1">
-                  <input id="comments" type="checkbox" name="comments" aria-describedby="comments-description"
-                    class="col-start-1 row-start-1 appearance-none rounded-sm border border-white/10 bg-accent checked:border-primary checked:bg-primary indeterminate:border-primary indeterminate:bg-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary disabled:border-white/5 disabled:bg-white/10 disabled:checked:bg-white/10 forced-colors:appearance-auto" />
-                  <svg viewBox="0 0 14 14" fill="none"
-                    class="pointer-events-none col-start-1 row-start-1 size-3.5 self-center justify-self-center stroke-white group-has-disabled:stroke-white/25">
-                    <path d="M3 8L6 11L11 3.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                      class="opacity-0 group-has-checked:opacity-100" />
-                    <path d="M3 7H11" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                      class="opacity-0 group-has-indeterminate:opacity-100" />
-                  </svg>
+        <!-- footer items  -->
+        <div class="grid xl:grid-cols-9 md:grid-cols-7 grid-cols-1 gap-5 items-center">
+          <div class="xl:col-span-2 md:col-span-3 flex flex-col gap-5">
+            <h4 class="text-xl text-primary font-bold leading-[1.6em] capitalize">Contact</h4>
+            <p class="text-base font-medium leading-[1.8em] text-cc2395c">2379 Concord Street <br>
+              Charlotte, NC 28212</p>
+            <ul>
+              <li><a href="mailto:email@yourdomain.com"
+                  class="text-base font-medium leading-[1.8em] text-cc2395c hover:text-primary transition-all duration-300 ">email@yourdomain.com</a>
+              </li>
+              <li><a href="tel:+1234567890"
+                  class="text-base font-medium leading-[1.8em] text-cc2395c hover:text-primary transition-all duration-300 ">+1234567890</a>
+              </li>
+            </ul>
+          </div>
+          <div class="md:col-span-2 flex flex-col gap-5">
+            <h4 class="text-xl text-primary font-bold leading-[1.6em] capitalize">Links</h4>
+            <ul class="flex flex-col gap-3">
+              <li><a href=""
+                  class="text-base hover:text-primary transition-all duration-300 text-cc2395c font-bold leading-[1.6em] ">
+                  About Us
+                </a>
+              </li>
+
+              <li><a href=""
+                  class="text-base hover:text-primary transition-all duration-300 text-cc2395c font-bold leading-[1.6em] ">
+                  Our services
+                </a>
+              </li>
+              <li><a href=""
+                  class="text-base hover:text-primary transition-all duration-300 text-cc2395c font-bold leading-[1.6em] ">
+                  Pricing plans
+                </a>
+              </li>
+              <li><a href=""
+                  class="text-base hover:text-primary transition-all duration-300 text-cc2395c font-bold leading-[1.6em] ">
+                  Testimonials
+                </a>
+              </li>
+
+            </ul>
+          </div>
+          <div class="md:col-span-2 flex flex-col gap-5">
+            <h4 class="text-xl text-primary font-bold leading-[1.6em] capitalize">Services</h4>
+            <ul class="flex flex-col gap-3">
+              <li><a href=""
+                  class="text-base hover:text-primary transition-all duration-300 text-cc2395c font-bold leading-[1.6em] ">
+                  Business consulting
+                </a>
+              </li>
+
+              <li><a href=""
+                  class="text-base hover:text-primary transition-all duration-300 text-cc2395c font-bold leading-[1.6em] ">
+                  Market research
+                </a>
+              </li>
+              <li><a href=""
+                  class="text-base hover:text-primary transition-all duration-300 text-cc2395c font-bold leading-[1.6em] ">
+                  Strategic consulting
+                </a>
+              </li>
+              <li><a href=""
+                  class="text-base hover:text-primary transition-all duration-300 text-cc2395c font-bold leading-[1.6em] ">
+                  Finance management
+                </a>
+              </li>
+
+            </ul>
+          </div>
+          <div class="xl:col-span-3  md:col-span-7">
+            <div class="xl:m-2.5 mt-10 px-10 py-[30px] bg-e843f70 rounded-[10px]">
+              <h4 class="text-xl text-primary font-bold leading-[1.6em] capitalize mb-5">Newsletter</h4>
+              <input type="email" name="email" id="email"
+                class="rounded-[20px] border-2 border-cc2395c text-cc2395c py-2 px-4 w-full h-12" placeholder="Email">
+              <!-- check box -->
+              <div class="flex gap-3 mt-2.5">
+                <div class="flex h-6 shrink-0 items-center">
+                  <div class="group grid size-4 grid-cols-1">
+                    <input id="comments" type="checkbox" name="comments" aria-describedby="comments-description"
+                      class="col-start-1 row-start-1 appearance-none rounded-sm border border-white/10 bg-accent checked:border-primary checked:bg-primary indeterminate:border-primary indeterminate:bg-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary disabled:border-white/5 disabled:bg-white/10 disabled:checked:bg-white/10 forced-colors:appearance-auto" />
+                    <svg viewBox="0 0 14 14" fill="none"
+                      class="pointer-events-none col-start-1 row-start-1 size-3.5 self-center justify-self-center stroke-white group-has-disabled:stroke-white/25">
+                      <path d="M3 8L6 11L11 3.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="opacity-0 group-has-checked:opacity-100" />
+                      <path d="M3 7H11" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="opacity-0 group-has-indeterminate:opacity-100" />
+                    </svg>
+                  </div>
+                </div>
+                <div class="text-base">
+                  <p id="comments-description" class="text-accent font-medium">I accept all terms and
+                    conditions</p>
                 </div>
               </div>
-              <div class="text-base">
-                <p id="comments-description" class="text-accent font-medium">I accept all terms and
-                  conditions</p>
+              <div class="mt-2.5 xl:flex-none flex justify-end">
+                <button
+                  class="bg-primary rounded-full text-accent text-base font-bold leading-[1.6em] inline-flex items-center justify-center text-center py-1.5 px-6 capitalize transition-all duration-300 border-2 border-primary hover:border-accent hover:bg-secondary cursor-pointer">Send</button>
               </div>
-            </div>
-            <div class="mt-2.5">
-              <button
-                class="bg-primary rounded-full text-accent text-base font-bold leading-[1.6em] inline-flex items-center justify-center text-center py-1.5 px-6 capitalize transition-all duration-300 border-2 border-primary hover:border-accent hover:bg-secondary cursor-pointer">Send</button>
             </div>
           </div>
         </div>
+      </div>
+    </div>
+    <!-- copyright start  -->
+    <div class="bg-e843f70 text-accent py-5">
+      <div class="xl:container mx-auto text-center 2xl:p-2.5 px-2.5">
+        <p class="text-base font-medium text-accent">&copy;<span id="copyright-year"></span> Copyright Zedello
+          Template Kit by TemplateUp</p>
       </div>
     </div>
   </footer>
@@ -1669,6 +1935,101 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"
     integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    // Header start 
+    const menuBtn = document.getElementById("menuBtn");
+    const closeBtn = document.getElementById("closeBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    const toggle = document.getElementById("serviceToggle");
+    const menu = document.getElementById("serviceMenu");
+    const arrow = document.getElementById("arrow");
+
+    // Open Menu
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.remove("-translate-x-full");
+    });
+
+    // Close Menu
+    closeBtn.addEventListener("click", () => {
+      mobileMenu.classList.add("-translate-x-full");
+    });
+
+    // Toggle Services
+    toggle.addEventListener("click", () => {
+      menu.classList.toggle("hidden");
+      arrow.classList.toggle("rotate-180");
+
+      // Active only on click
+      toggle.classList.toggle("bg-primary");
+      toggle.classList.toggle("text-white");
+    });
+
+    // Click Outside Close
+    document.addEventListener("click", (e) => {
+      if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+        mobileMenu.classList.add("-translate-x-full");
+      }
+    });
+    // counter down
+    const counters = document.querySelectorAll(".counter");
+
+    const animateCounter = (el) => {
+      const target = +el.dataset.target;
+      let count = 0;
+
+      const update = () => {
+        const increment = target / 200;
+
+        if (count < target) {
+          count += increment;
+          el.innerText = Math.floor(count).toLocaleString("de-DE");
+          requestAnimationFrame(update);
+        } else {
+          el.innerText = target.toLocaleString("de-DE");
+        }
+      };
+
+      update();
+    };
+
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    counters.forEach(counter => observer.observe(counter));
+    // counter down end
+
+    // faq start 
+
+    const buttons = document.querySelectorAll(".accordion-btn");
+
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const content = btn.nextElementSibling;
+
+        const isOpen = content.style.maxHeight && content.style.maxHeight !== "0px";
+
+        if (isOpen) {
+          // Close
+          content.style.maxHeight = null;
+          btn.classList.remove("active");
+        } else {
+          // Open
+          content.style.maxHeight = content.scrollHeight + "px";
+          btn.classList.add("active");
+        }
+      });
+    });
+    // faq end
+    // copyright 
+    document.getElementById("copyright-year").textContent = new Date().getFullYear();
+  </script>
 
   <script>
     gsap.registerPlugin(ScrollTrigger);
